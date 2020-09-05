@@ -1,0 +1,561 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	
+	<meta name="author" content="Kostis Christodoulou">
+	<meta name="generator" content="Hugo 0.74.3" />
+	<title>Exploratory Data Analysis for Modelling &middot; Portfolio website for XXX</title>
+	<!-- Stylesheets -->
+	
+	<link rel="stylesheet" href="/css/main.css"/>
+	
+	
+
+	
+
+	<!-- Custom Fonts -->
+	<link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+	
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="js/ie/html5shiv.js"></script>
+	<script src="js/ie/html5shiv.jsrespond.min.js"></script>
+	<![endif]-->
+</head>
+
+    <body>
+
+    <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Header -->
+    <header id="header" class="alt">
+        <a href="/" class="logo"><strong>Kostis</strong> <span>Portfolio website</span></a>
+        <nav>
+            <a href="#menu">Menu</a>
+        </nav>
+    </header>
+
+<!-- Menu -->
+    <nav id="menu">
+        <ul class="links">
+            
+                <li><a href="/">Home</a></li>
+            
+                <li><a href="/blogs">Blogs</a></li>
+            
+                <li><a href="/blogs/ipsum">Generic Blog</a></li>
+            
+                <li><a href="/elements.html">Elements</a></li>
+            
+
+        </ul>
+        <ul class="actions vertical">
+            
+                <li><a href="/blogs" class="button special fit">Get Started</a></li>
+            
+            
+                <li><a href="/" class="button fit">Log In</a></li>
+            
+        </ul>
+    </nav>
+
+        <!-- Main -->
+            <div id="main" class="alt">
+
+                
+                    <section id="one">
+                        <div class="inner">
+                            <header class="major">
+                                <h1>Exploratory Data Analysis for Modelling</h1>
+                            </header>
+                            
+                            
+
+<div id="TOC">
+<ul>
+<li><a href="#penguin-bill-dimensions">Penguin Bill dimensions</a></li>
+<li><a href="#exploratory-data-analysis-eda.">Exploratory Data Analysis (EDA).</a></li>
+<li><a href="#ggallyggpairs-to-get-scatter-plot-correlation-matrix"><code>GGally::ggpairs()</code> to get scatter plot + correlation matrix</a></li>
+<li><a href="#dummy-variables">Dummy variables</a></li>
+<li><a href="#modelling-considerations-of-numerical-variables">Modelling considerations of numerical variables</a><ul>
+<li><a href="#penguin-body-mass-vs-flipper-length">Penguin body mass vs flipper length</a></li>
+<li><a href="#penguin-body-mass-vs-bill-depth">Penguin body mass vs bill depth</a></li>
+<li><a href="#penguin-body-mass-and-flipper-size-faceted-by-sex">Penguin body mass and flipper size, faceted by sex</a></li>
+<li><a href="#simpsons-paradox-penguin-bill-length-vs-bill-depth">Simpson’s Paradox: Penguin bill length vs bill depth</a></li>
+</ul></li>
+<li><a href="#is-y-heavily-skewed-does-it-need-to-be-transformed">Is Y heavily skewed? Does it need to be transformed?</a></li>
+<li><a href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+</div>
+
+<p>You may remember the Happy Feet movie and here is an Adélie penguin singing
+<a href="https://www.youtube.com/watch?v=ZCATC0z0K0I" target="_blank">My Way</a>. We shall analyse data that were collected and made available by <a href="https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php">Dr. Kristen Gorman</a> and the <a href="https://pal.lternet.edu/">Palmer Station, Antarctica LTER</a>. The dataset contains data for 344 penguins on 3 different species of penguins (Adélie, Chinstrap, and Gentoo), collected from 3 islands in the Palmer Archipelago, Antarctica.</p>
+<p>This great artwork was made by <span class="citation">[@allison_horst]</span>(<a href="https://twitter.com/allison_horst" class="uri">https://twitter.com/allison_horst</a>)</p>
+<p><img src="/img/penguins.png" style="display: block; margin: auto;" /></p>
+<p>and if you are a Happy Feet fan, these are the penguins we have data on</p>
+<ul>
+<li><a href="https://happyfeet.fandom.com/wiki/Ad%C3%A9lie_Penguin" target="_blank">Adélie</a></li>
+<li><a href="https://happyfeet.fandom.com/wiki/Chinstrap_Penguin" target="_blank">Chinstrap</a></li>
+<li><a href="https://happyfeet.fandom.com/wiki/Gentoo_Penguin" target="_blank">Gentoo</a></li>
+</ul>
+<div id="penguin-bill-dimensions" class="section level2">
+<h2>Penguin Bill dimensions</h2>
+<p>The culmen is the upper ridge of a bird’s bill. In the simplified <code>penguins</code> data, culmen length and depth are renamed as variables <code>bill_length_mm</code> and <code>bill_depth_mm</code> to be more intuitive.</p>
+<p>For this penguin data, the culmen (bill) length and depth are measured as shown below:</p>
+<p><img src="/img/culmen_depth.png" style="display: block; margin: auto;" /></p>
+</div>
+<div id="exploratory-data-analysis-eda." class="section level2">
+<h2>Exploratory Data Analysis (EDA).</h2>
+<p>The variable of interest is penguin body mass. We want to see whether body mass is related to any of the other variables included in the dataframe. So let us start by looking at the data</p>
+<pre class="r"><code>library(palmerpenguins)
+glimpse(penguins)</code></pre>
+<pre><code>## Rows: 344
+## Columns: 8
+## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, A...
+## $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torge...
+## $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34....
+## $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18....
+## $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, ...
+## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 347...
+## $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, m...
+## $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2...</code></pre>
+<pre class="r"><code>skimr::skim(penguins)</code></pre>
+<table>
+<caption><span id="tab:unnamed-chunk-3">Table 1: </span>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Name</td>
+<td align="left">penguins</td>
+</tr>
+<tr class="even">
+<td align="left">Number of rows</td>
+<td align="left">344</td>
+</tr>
+<tr class="odd">
+<td align="left">Number of columns</td>
+<td align="left">8</td>
+</tr>
+<tr class="even">
+<td align="left">_______________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Column type frequency:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">factor</td>
+<td align="left">3</td>
+</tr>
+<tr class="odd">
+<td align="left">numeric</td>
+<td align="left">5</td>
+</tr>
+<tr class="even">
+<td align="left">________________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Group variables</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: factor</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">ordered</th>
+<th align="right">n_unique</th>
+<th align="left">top_counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">species</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="left">FALSE</td>
+<td align="right">3</td>
+<td align="left">Ade: 152, Gen: 124, Chi: 68</td>
+</tr>
+<tr class="even">
+<td align="left">island</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="left">FALSE</td>
+<td align="right">3</td>
+<td align="left">Bis: 168, Dre: 124, Tor: 52</td>
+</tr>
+<tr class="odd">
+<td align="left">sex</td>
+<td align="right">11</td>
+<td align="right">0.97</td>
+<td align="left">FALSE</td>
+<td align="right">2</td>
+<td align="left">mal: 168, fem: 165</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">p0</th>
+<th align="right">p25</th>
+<th align="right">p50</th>
+<th align="right">p75</th>
+<th align="right">p100</th>
+<th align="left">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">bill_length_mm</td>
+<td align="right">2</td>
+<td align="right">0.99</td>
+<td align="right">43.92</td>
+<td align="right">5.46</td>
+<td align="right">32.1</td>
+<td align="right">39.23</td>
+<td align="right">44.45</td>
+<td align="right">48.5</td>
+<td align="right">59.6</td>
+<td align="left">▃▇▇▆▁</td>
+</tr>
+<tr class="even">
+<td align="left">bill_depth_mm</td>
+<td align="right">2</td>
+<td align="right">0.99</td>
+<td align="right">17.15</td>
+<td align="right">1.97</td>
+<td align="right">13.1</td>
+<td align="right">15.60</td>
+<td align="right">17.30</td>
+<td align="right">18.7</td>
+<td align="right">21.5</td>
+<td align="left">▅▅▇▇▂</td>
+</tr>
+<tr class="odd">
+<td align="left">flipper_length_mm</td>
+<td align="right">2</td>
+<td align="right">0.99</td>
+<td align="right">200.92</td>
+<td align="right">14.06</td>
+<td align="right">172.0</td>
+<td align="right">190.00</td>
+<td align="right">197.00</td>
+<td align="right">213.0</td>
+<td align="right">231.0</td>
+<td align="left">▂▇▃▅▂</td>
+</tr>
+<tr class="even">
+<td align="left">body_mass_g</td>
+<td align="right">2</td>
+<td align="right">0.99</td>
+<td align="right">4201.75</td>
+<td align="right">801.95</td>
+<td align="right">2700.0</td>
+<td align="right">3550.00</td>
+<td align="right">4050.00</td>
+<td align="right">4750.0</td>
+<td align="right">6300.0</td>
+<td align="left">▃▇▆▃▂</td>
+</tr>
+<tr class="odd">
+<td align="left">year</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">2008.03</td>
+<td align="right">0.82</td>
+<td align="right">2007.0</td>
+<td align="right">2007.00</td>
+<td align="right">2008.00</td>
+<td align="right">2009.0</td>
+<td align="right">2009.0</td>
+<td align="left">▇▁▇▁▇</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="ggallyggpairs-to-get-scatter-plot-correlation-matrix" class="section level2">
+<h2><code>GGally::ggpairs()</code> to get scatter plot + correlation matrix</h2>
+<p><code>GGally::ggpairs()</code> is a useful tool for exploring distributions and correlations.</p>
+<pre class="r"><code>ggpairs1 &lt;- penguins %&gt;% 
+  na.omit() %&gt;% 
+  select( body_mass_g, flipper_length_mm, bill_length_mm, bill_depth_mm, species, sex, island) %&gt;% 
+  rename(`Flipper length(mm)` = flipper_length_mm, 
+         `Body mass (g)` = body_mass_g, 
+         `Bill length (mm)` = bill_length_mm, 
+         `Bill depth (mm)` = bill_depth_mm) %&gt;% 
+  GGally::ggpairs() +
+  theme_minimal() 
+
+ggpairs1</code></pre>
+<p><img src="/blogs/modelling_eda_files/figure-html/ggpairs1-1.png" width="672" />
+<code>ggpairs()</code> provides a lot of information, so let us spend some time deciphering this chart.</p>
+<ol style="list-style-type: decimal">
+<li>Along the diagonal we get a density plot of each variable of interest. For instance, body mass seems to be right skewed, and the rest of the variables seem bimodal.</li>
+<li>The upper part of the matrix, shows correlation coefficients– to determine between which variables, read off the corresponding row and column header</li>
+<li>The bottom part provides a scatterplot between any two variables which you can again determine by looking at the row/column they correspond.</li>
+<li>For categorical variables (species, sex, island), we do not get any numerical values, but rather histograms and boxplots that show the distribution of outcomes. If we wanted to get a numerical correlation value, we would use the <code>polycor</code> package and <code>polycor::hetcor()</code> that calculates polyserial correlations between numeric and ordinal variables, and polychoric correlations between ordinal variables, but this is outside the scope of this class.</li>
+</ol>
+<p>Which correlation is the highest? That between body mass and flipper length, or 0.873. We can see the scatterplot of these two variables in the upper left, just underneath the density plot of body mass, whereas to the right of the body mass density plot we can see the correlation value of 0.873. We could somehow “see” a line through these points. In building a model for body mass, surely flipper length will be the first variable to consider and the one that would explain a fair bit of the variation in body mass.</p>
+<p>What about the lowest correlation? That seems to be the one between bill length and bill depth, with a correlation value of -0.229. On the face of it, there seems to be very weak relationship between these two variables.</p>
+<p>What about the second lowest correlation? Numerically, it is the one between body mass and bill depth (-0.472). However, if you look at the corresponding scatterplot in the lower left corner you see two clusters of points, so we need to dig a bit deeper.</p>
+</div>
+<div id="dummy-variables" class="section level2">
+<h2>Dummy variables</h2>
+<p>Dummy, or categorical, variables allows us to incorporate non-numeric data into our analysis. In this example we have two categorical variables (<code>species</code>, <code>sex</code>) and we can use <code>ggpairs()</code> to dig a bit deeper and then use these categorical variables in our modelling. The first scatterplot matrix does not take into consideration the species or the sex of the penguins, variables that may help explain differences in body mass.</p>
+<pre class="r"><code>ggpairs2 &lt;- penguins %&gt;% 
+  na.omit() %&gt;% 
+  select( species, sex, body_mass_g, flipper_length_mm, bill_length_mm, bill_depth_mm) %&gt;% 
+  rename(`Flipper lenght(mm)` = flipper_length_mm, 
+         `Body mass (g)` = body_mass_g, 
+         `Bill length (mm)` = bill_length_mm, 
+         `Bill depth (mm)` = bill_depth_mm) %&gt;% 
+  GGally::ggpairs(aes(colour=species, shape=species),
+                  alpha = 0.4) +
+  scale_colour_manual(values = c(&quot;darkorange&quot;,&quot;purple&quot;,&quot;cyan4&quot;)) +
+  scale_fill_manual(values = c(&quot;darkorange&quot;,&quot;purple&quot;,&quot;cyan4&quot;)) +
+  theme_minimal()
+  
+
+ggpairs2</code></pre>
+<p><img src="/blogs/modelling_eda_files/figure-html/ggpairs2-1.png" width="672" /></p>
+<p>When we include the categorical (factor) variables of <code>species</code> and <code>sex</code>, and since these are no longer numerical values, we get boxplots and histograms. For instance to explore the relationship between body mass and species, look at the upper left of the table; yo can see that the green penguins (Gentoo) seem to be heavier than the other two species which may have no difference between them.</p>
+<p>Since this plot may be confusing, let us just concentrate on the scatterplot matrix of numerical values coloured by <code>species</code>.</p>
+<pre class="r"><code>ggpairs3 &lt;- penguins %&gt;% 
+  na.omit() %&gt;% 
+  select( species, sex, body_mass_g, flipper_length_mm, bill_length_mm, bill_depth_mm) %&gt;% 
+  rename(`Flipper lenght(mm)` = flipper_length_mm, 
+         `Body mass (g)` = body_mass_g, 
+         `Bill length (mm)` = bill_length_mm, 
+         `Bill depth (mm)` = bill_depth_mm) %&gt;% 
+  GGally::ggpairs(aes(colour=species, shape=species),
+                  alpha = 0.4,
+                  columns = c(3:6)) + 
+  scale_colour_manual(values = c(&quot;darkorange&quot;,&quot;purple&quot;,&quot;cyan4&quot;)) +
+  scale_fill_manual(values = c(&quot;darkorange&quot;,&quot;purple&quot;,&quot;cyan4&quot;)) +
+  theme_minimal()
+  
+
+ggpairs3</code></pre>
+<p><img src="/blogs/modelling_eda_files/figure-html/ggpairs3-1.png" width="672" /></p>
+</div>
+<div id="modelling-considerations-of-numerical-variables" class="section level2">
+<h2>Modelling considerations of numerical variables</h2>
+<p>Let us examine the relationship between body mass and flipper length, and body mass and bill depth.</p>
+<div id="penguin-body-mass-vs-flipper-length" class="section level3">
+<h3>Penguin body mass vs flipper length</h3>
+<pre class="r"><code>mass_flipper &lt;- ggplot(data = penguins,
+                       aes(x = flipper_length_mm,
+                           y = body_mass_g)) +
+  geom_point(aes(colour = species,
+                 shape = species),
+             size = 3,
+             alpha = 0.6) +
+  theme_minimal() +
+  geom_smooth(method = &quot;lm&quot;, se=FALSE, aes(colour = species)) +
+  scale_color_manual(values = c(&quot;darkorange&quot;,&quot;purple&quot;,&quot;cyan4&quot;)) +
+  labs(title = &quot;Penguin size, Palmer Station LTER&quot;,
+       subtitle = &quot;Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins&quot;,
+       x = &quot;Flipper length (mm)&quot;,
+       y = &quot;Body mass (g)&quot;,
+       color = &quot;Penguin species&quot;,
+       shape = &quot;Penguin species&quot;) +
+  theme(legend.position = c(0.2, 0.7),
+        legend.background = element_rect(fill = &quot;white&quot;, colour = NA),
+        plot.title.position = &quot;plot&quot;,
+        plot.caption = element_text(hjust = 0, face= &quot;italic&quot;),
+        plot.caption.position = &quot;plot&quot;)
+
+mass_flipper</code></pre>
+<p><img src="/blogs/modelling_eda_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="penguin-body-mass-vs-bill-depth" class="section level3">
+<h3>Penguin body mass vs bill depth</h3>
+<pre class="r"><code>mass_bill_depth &lt;- ggplot(data = penguins,
+                       aes(x = bill_depth_mm,
+                           y = body_mass_g)) +
+  geom_point(aes(colour = species,
+                 shape = species),
+             size = 3,
+             alpha = 0.6) +
+  theme_minimal() +
+  geom_smooth(method = &quot;lm&quot;, se=FALSE, aes(colour = species)) +
+  scale_color_manual(values = c(&quot;darkorange&quot;,&quot;purple&quot;,&quot;cyan4&quot;)) +
+  labs(title = &quot;Penguin size, Palmer Station LTER&quot;,
+       subtitle = &quot;Bill depth and body mass for Adelie, Chinstrap and Gentoo Penguins&quot;,
+       x = &quot;Bill depth (mm)&quot;,
+       y = &quot;Body mass (g)&quot;,
+       color = &quot;Penguin species&quot;,
+       shape = &quot;Penguin species&quot;) +
+  theme(legend.position = c(0.8, 0.8),
+        legend.background = element_rect(fill = &quot;white&quot;, colour = NA),
+        plot.title.position = &quot;plot&quot;,
+        plot.caption = element_text(hjust = 0, face= &quot;italic&quot;),
+        plot.caption.position = &quot;plot&quot;)
+
+mass_bill_depth</code></pre>
+<p><img src="/blogs/modelling_eda_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+This shows that there is very little difference between Adelie and Chinstrap, but Gentoo is markedly different. All three species have a positive relationship (as bill depth increases, so does body mass), which is not what the numerical correlation coefficient of -0.472 would have us believe.</p>
+</div>
+<div id="penguin-body-mass-and-flipper-size-faceted-by-sex" class="section level3">
+<h3>Penguin body mass and flipper size, faceted by sex</h3>
+<pre class="r"><code>ggplot(penguins, aes(x = flipper_length_mm,
+                            y = body_mass_g)) +
+  geom_point(aes(colour = sex)) +
+  theme_minimal() +
+  scale_color_manual(values = c(&quot;darkorange&quot;,&quot;cyan4&quot;), na.translate = FALSE) +
+  labs(title = &quot;Penguin flipper and body mass&quot;,
+       subtitle = &quot;Dimensions for male and female Adelie, Chinstrap and Gentoo Penguins at Palmer Station LTER&quot;,
+       x = &quot;Flipper length (mm)&quot;,
+       y = &quot;Body mass (g)&quot;,
+       color = &quot;Penguin sex&quot;) +
+  theme(legend.position = &quot;bottom&quot;,
+        legend.background = element_rect(fill = &quot;white&quot;, color = NA),
+        plot.title.position = &quot;plot&quot;,
+        plot.caption = element_text(hjust = 0, face= &quot;italic&quot;),
+        plot.caption.position = &quot;plot&quot;) +
+  facet_wrap(~species)</code></pre>
+<p><img src="/blogs/modelling_eda_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>On average, male penguins seem to be heavier than female ones, and this is consistent along all three species.</p>
+</div>
+<div id="simpsons-paradox-penguin-bill-length-vs-bill-depth" class="section level3">
+<h3>Simpson’s Paradox: Penguin bill length vs bill depth</h3>
+<p>In the original scatterplot matrix without <code>species</code>, the lowest correlation coefficient of -0.235 was between bill length and bill depth. The following is just the scatterplot with the line of best fit added.</p>
+<pre class="r"><code>bill_no_species &lt;- ggplot(data = penguins,
+                         aes(x = bill_length_mm,
+                             y = bill_depth_mm)) +
+  geom_point() +
+  theme_minimal() +
+  scale_color_manual(values = c(&quot;darkorange&quot;,&quot;purple&quot;,&quot;cyan4&quot;)) +
+  labs(title = &quot;Penguin bill dimensions (omit species)&quot;,
+       subtitle = &quot;Palmer Station LTER&quot;,
+       x = &quot;Bill length (mm)&quot;,
+       y = &quot;Bill depth (mm)&quot;) +
+  theme(plot.title.position = &quot;plot&quot;,
+        plot.caption = element_text(hjust = 0, face= &quot;italic&quot;),
+        plot.caption.position = &quot;plot&quot;) +
+  geom_smooth(method = &quot;lm&quot;, se = FALSE, color = &quot;blue&quot;)
+
+bill_no_species</code></pre>
+<p><img src="/blogs/modelling_eda_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>However, if we plot the same scatterplot colouring points by <code>species</code>, we get a completely different story.</p>
+<pre class="r"><code>bill_len_dep &lt;- ggplot(data = penguins,
+                         aes(x = bill_length_mm,
+                             y = bill_depth_mm,
+                             group = species)) +
+  geom_point(aes(colour = species,
+                 shape = species),
+             size = 3,
+             alpha = 0.8) +
+  geom_smooth(method = &quot;lm&quot;, se = FALSE, aes(colour = species)) +
+  theme_minimal() +
+  scale_color_manual(values = c(&quot;darkorange&quot;,&quot;purple&quot;,&quot;cyan4&quot;)) +
+  labs(title = &quot;Penguin bill dimensions&quot;,
+       subtitle = &quot;Bill length and depth for Adelie, Chinstrap and Gentoo Penguins at Palmer Station LTER&quot;,
+       x = &quot;Bill length (mm)&quot;,
+       y = &quot;Bill depth (mm)&quot;,
+       color = &quot;Penguin species&quot;,
+       shape = &quot;Penguin species&quot;) +
+  theme(legend.position = c(0.85, 0.10),
+        legend.background = element_rect(fill = &quot;white&quot;, color = NA),
+        plot.title.position = &quot;plot&quot;,
+        plot.caption = element_text(hjust = 0, face= &quot;italic&quot;),
+        plot.caption.position = &quot;plot&quot;)
+
+bill_len_dep</code></pre>
+<p><img src="/blogs/modelling_eda_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Simpson%27s_paradox">Simpson’s paradox</a></p>
+</blockquote>
+</div>
+</div>
+<div id="is-y-heavily-skewed-does-it-need-to-be-transformed" class="section level2">
+<h2>Is Y heavily skewed? Does it need to be transformed?</h2>
+<p>THe variable we are interested to explain, body mass, does not appear to be heavily skewed so there is no need for any transformation.</p>
+</div>
+<div id="acknowledgements" class="section level2 toc-ignore">
+<h2>Acknowledgements</h2>
+<ul>
+<li>This page is adapted from the Palmer <a href="https://allisonhorst.github.io/palmerpenguins/articles/examples.html" target="_blank">Palmer Penguins package Vignette</a></li>
+</ul>
+</div>
+
+                        </div>
+                    </section>
+            <!-- Disqus Inject -->
+                
+            </div>
+            
+        <!-- Footer -->
+            
+                <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                
+                    <li><a href="https://www.twitter.com" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+                
+                    <li><a href="https://www.facebook.com" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+                
+                    <li><a href="https://www.instagram.com" class="icon alt fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+                
+                    <li><a href="https://www.github.com" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+                
+                    <li><a href="https://www.linkedin.com" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+                
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Company Name</li>
+                
+                <li>Design:  <a href="https://www.html5up.net">HTML5 UP</a></li>
+                
+            </ul>
+        </div>
+    </footer>
+
+            
+        </div>
+
+    <!-- Scripts -->
+        <!-- Scripts -->
+    <!-- jQuery -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+
+    
+
+    <!-- Main JS -->
+    <script src="/js/main.js"></script>
+
+    
+
+    
+
+    </body>
+</html>
