@@ -186,7 +186,7 @@ disqusShortname = ""
 
   # Footer section
   [params.footer]
-    enable = false
+    enable = true
 #    copyright = "Company Name"
 
 # Uses font awesome icons
