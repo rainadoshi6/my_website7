@@ -53,44 +53,44 @@ glimpse(nyt_mask_survey)</code></pre>
 # The id field is the FIPS code for the county
 county_map %&gt;% 
   sample_n(5)</code></pre>
-<pre><code>##      long     lat  order  hole piece            group    id
-## 1 1011396   96906 187063 FALSE     1 0500000US55029.1 55029
-## 2  213301  368906  93246 FALSE     1 0500000US27089.1 27089
-## 3 1118320 -631771  56636 FALSE     1 0500000US18125.1 18125
-## 4  729389 -471959  59035 FALSE     1 0500000US19111.1 19111
-## 5   53757 -124009 148448 FALSE     1 0500000US46085.1 46085</code></pre>
+<pre><code>##      long      lat  order  hole piece            group    id
+## 1  961913  -577868  54387 FALSE     1 0500000US17173.1 17173
+## 2  848211 -1385419  96525 FALSE     1 0500000US28021.1 28021
+## 3 1409523 -1317663    436 FALSE     1 0500000US01005.1 01005
+## 4 1579245  -853145 126879 FALSE     1 0500000US37199.1 37199
+## 5 1135770 -1104361   3965 FALSE     1 0500000US01133.1 01133</code></pre>
 <pre class="r"><code>county_data %&gt;%
     sample_n(5)</code></pre>
-<pre><code>##      id                name state census_region      pop_dens   pop_dens4
-## 1 51041 Chesterfield County    VA         South [  500, 1000) [118,71672]
-## 2 38015     Burleigh County    ND       Midwest [   50,  100) [ 45,  118)
-## 3 56015       Goshen County    WY          West [    0,   10) [  0,   17)
-## 4 27063      Jackson County    MN       Midwest [   10,   50) [  0,   17)
-## 5 49019        Grand County    UT          West [    0,   10) [  0,   17)
-##     pop_dens6   pct_black    pop female white black travel_time land_area
-## 1 [215,71672] [15.0,25.0) 332499   51.9  69.9  23.2        25.5       423
-## 2 [ 45,   82) [ 0.0, 2.0)  90503   50.5  92.6   1.0        18.8      1633
-## 3 [  0,    9) [ 0.0, 2.0)  13514   47.7  96.1   1.1        15.9      2225
-## 4 [  9,   25) [ 0.0, 2.0)  10269   49.4  96.3   0.6        17.8       703
-## 5 [  0,    9) [ 0.0, 2.0)   9429   49.9  91.9   0.7        14.5      3672
+<pre><code>##      id                  name state census_region      pop_dens   pop_dens4
+## 1 42047            Elk County    PA     Northeast [   10,   50) [ 17,   45)
+## 2 28109    Pearl River County    MS         South [   50,  100) [ 45,  118)
+## 3 54037      Jefferson County    WV         South [  100,  500) [118,71672]
+## 4 26033       Chippewa County    MI       Midwest [   10,   50) [ 17,   45)
+## 5 24035 Queen Anne\\&#39;s County    MD         South [  100,  500) [118,71672]
+##     pop_dens6   pct_black   pop female white black travel_time land_area
+## 1 [ 25,   45) [ 0.0, 2.0) 31194   49.9  98.4   0.4        16.8       827
+## 2 [ 45,   82) [10.0,15.0) 55224   50.7  84.5  12.6        33.4       811
+## 3 [215,71672] [ 5.0,10.0) 55713   50.6  88.5   6.9        38.9       210
+## 4 [  9,   25) [ 5.0,10.0) 38321   44.8  72.0   6.8        16.2      1558
+## 5 [ 82,  215) [ 5.0,10.0) 48804   50.4  89.8   6.9        33.9       372
 ##   hh_income su_gun4 su_gun6  fips votes_dem_2016 votes_gop_2016
-## 1     72088 [ 5, 8) [ 7, 8) 51041          80993          84938
-## 2     61811 [ 5, 8) [ 7, 8) 38015          10865          32499
-## 3     43257 [ 8,11) [10,12) 56015            924           4418
-## 4     51681 [ 5, 8) [ 7, 8) 27063           1492           3609
-## 5     45888 [11,54] [12,54] 49019           1932           1934
+## 1     45767 [11,54] [12,54] 42047           3637           9704
+## 2     42510 [ 8,11) [10,12) 28109           2919          15530
+## 3     65304 [ 5, 8) [ 7, 8) 54037           9458          13144
+## 4     41637 [ 8,11) [ 8,10) 26033           5378           9120
+## 5     87256 [ 5, 8) [ 4, 7) 24035           7316          16211
 ##   total_votes_2016 per_dem_2016 per_gop_2016 diff_2016 per_dem_2012
-## 1           175288        0.462        0.485      3945        0.458
-## 2            46874        0.232        0.693     21634        0.327
-## 3             5708        0.162        0.774      3494        0.253
-## 4             5453        0.274        0.662      2117        0.419
-## 5             4456        0.434        0.434         2        0.440
+## 1            13854        0.263        0.700      6067        0.414
+## 2            18893        0.155        0.822     12611        0.191
+## 3            24007        0.394        0.548      3686        0.469
+## 4            15434        0.348        0.591      3742        0.456
+## 5            24633        0.297        0.658      8895        0.341
 ##   per_gop_2012 diff_2012 winner partywinner16 winner12 partywinner12 flipped
-## 1        0.529     12220  Trump    Republican   Romney    Republican      No
-## 2        0.649     13775  Trump    Republican   Romney    Republican      No
-## 3        0.726      2720  Trump    Republican   Romney    Republican      No
-## 4        0.562       776  Trump    Republican   Romney    Republican      No
-## 5        0.503       239  Trump    Republican   Romney    Republican      No</code></pre>
+## 1        0.571      1955  Trump    Republican   Romney    Republican      No
+## 2        0.794     12023  Trump    Republican   Romney    Republican      No
+## 3        0.509       875  Trump    Republican   Romney    Republican      No
+## 4        0.532      1178  Trump    Republican   Romney    Republican      No
+## 5        0.643      6981  Trump    Republican   Romney    Republican      No</code></pre>
 <pre class="r"><code>glimpse(county_data)</code></pre>
 <pre><code>## Rows: 3,195
 ## Columns: 32
