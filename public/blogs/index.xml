@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Lifestyle on Portfolio website for XXX</title>
+    <title>Lifestyle on Portfolio website for Kostis</title>
     <link>/blogs/</link>
-    <description>Recent content in Lifestyle on Portfolio website for XXX</description>
+    <description>Recent content in Lifestyle on Portfolio website for Kostis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 31 Oct 2017 22:27:21 -0500</lastBuildDate>
@@ -14,7 +14,7 @@
     <item>
       <title>Mask Acceptance</title>
       <link>/blogs/masknyt/</link>
-      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 07 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>/blogs/masknyt/</guid>
       <description>NYT mask useGithub source for data https://github.com/nytimes/covid-19-data/tree/master/mask-use

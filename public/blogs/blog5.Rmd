@@ -2,7 +2,7 @@
 categories:
 - ""
 - ""
-date: "2020-09-04"
+date: "2020-09-07"
 description: Is mask acceptance high in the US? NYT Survey analysis
 draft: false
 keywords: ""
@@ -65,7 +65,7 @@ nyt_mask_survey <- nyt_mask_survey %>%
 glimpse(nyt_mask_survey)
 ```
 
-## Choropleth map
+## Choropleth maps
 
 The FIPS code is a federal code that numbers states and territories of the US. It extends to the county level with an additional four digits, so every county in the US has a unique six-digit identifier, where the first two digits represent the state. 
 
