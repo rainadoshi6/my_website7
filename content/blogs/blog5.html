@@ -5,6 +5,7 @@ categories:
 date: "2020-09-07"
 description: Is mask acceptance high in the US? NYT Survey analysis
 draft: false
+image: pic07.jpg
 keywords: ""
 slug: blog5
 title: Mask Acceptance
@@ -53,44 +54,44 @@ glimpse(nyt_mask_survey)</code></pre>
 # The id field is the FIPS code for the county
 county_map %&gt;% 
   sample_n(5)</code></pre>
-<pre><code>##      long      lat  order  hole piece            group    id
-## 1  961913  -577868  54387 FALSE     1 0500000US17173.1 17173
-## 2  848211 -1385419  96525 FALSE     1 0500000US28021.1 28021
-## 3 1409523 -1317663    436 FALSE     1 0500000US01005.1 01005
-## 4 1579245  -853145 126879 FALSE     1 0500000US37199.1 37199
-## 5 1135770 -1104361   3965 FALSE     1 0500000US01133.1 01133</code></pre>
+<pre><code>##      long     lat  order  hole piece            group    id
+## 1 -355346 -752985  32588 FALSE     1 0500000US08089.1 08089
+## 2  936569 -981396 154597 FALSE     1 0500000US47167.1 47167
+## 3  278224   19892 147866 FALSE     1 0500000US46051.1 46051
+## 4 2158330 -695178 123011 FALSE     4 0500000US37055.4 37055
+## 5 1537972 -183552 131237 FALSE     1 0500000US39085.1 39085</code></pre>
 <pre class="r"><code>county_data %&gt;%
     sample_n(5)</code></pre>
-<pre><code>##      id                  name state census_region      pop_dens   pop_dens4
-## 1 42047            Elk County    PA     Northeast [   10,   50) [ 17,   45)
-## 2 28109    Pearl River County    MS         South [   50,  100) [ 45,  118)
-## 3 54037      Jefferson County    WV         South [  100,  500) [118,71672]
-## 4 26033       Chippewa County    MI       Midwest [   10,   50) [ 17,   45)
-## 5 24035 Queen Anne\\&#39;s County    MD         South [  100,  500) [118,71672]
-##     pop_dens6   pct_black   pop female white black travel_time land_area
-## 1 [ 25,   45) [ 0.0, 2.0) 31194   49.9  98.4   0.4        16.8       827
-## 2 [ 45,   82) [10.0,15.0) 55224   50.7  84.5  12.6        33.4       811
-## 3 [215,71672] [ 5.0,10.0) 55713   50.6  88.5   6.9        38.9       210
-## 4 [  9,   25) [ 5.0,10.0) 38321   44.8  72.0   6.8        16.2      1558
-## 5 [ 82,  215) [ 5.0,10.0) 48804   50.4  89.8   6.9        33.9       372
+<pre><code>##      id               name state census_region      pop_dens   pop_dens4
+## 1 35021     Harding County    NM          West [    0,   10) [  0,   17)
+## 2 54083    Randolph County    WV         South [   10,   50) [ 17,   45)
+## 3 53035      Kitsap County    WA          West [  500, 1000) [118,71672]
+## 4 47147   Robertson County    TN         South [  100,  500) [118,71672]
+## 5 30111 Yellowstone County    MT          West [   50,  100) [ 45,  118)
+##     pop_dens6   pct_black    pop female white black travel_time land_area
+## 1 [  0,    9) [ 0.0, 2.0)    683   47.8  96.2   0.4        21.1      2125
+## 2 [ 25,   45) [ 0.0, 2.0)  29429   48.4  96.9   1.5        20.9      1040
+## 3 [215,71672] [ 2.0, 5.0) 254183   49.1  83.4   3.0        29.7       395
+## 4 [ 82,  215) [ 5.0,10.0)  68079   50.7  89.6   7.8        29.9       476
+## 5 [ 45,   82) [ 0.0, 2.0) 155634   51.0  91.5   0.8        19.0      2633
 ##   hh_income su_gun4 su_gun6  fips votes_dem_2016 votes_gop_2016
-## 1     45767 [11,54] [12,54] 42047           3637           9704
-## 2     42510 [ 8,11) [10,12) 28109           2919          15530
-## 3     65304 [ 5, 8) [ 7, 8) 54037           9458          13144
-## 4     41637 [ 8,11) [ 8,10) 26033           5378           9120
-## 5     87256 [ 5, 8) [ 4, 7) 24035           7316          16211
+## 1     34063 [ 0, 5) [ 0, 4) 35021            156            311
+## 2     37276 [11,54] [10,12) 54083           2724           7583
+## 3     62413 [ 5, 8) [ 7, 8) 53035          60561          46762
+## 4     52792 [11,54] [10,12) 47147           6634          19393
+## 5     51342 [ 8,11) [10,12) 30111          21117          38675
 ##   total_votes_2016 per_dem_2016 per_gop_2016 diff_2016 per_dem_2012
-## 1            13854        0.263        0.700      6067        0.414
-## 2            18893        0.155        0.822     12611        0.191
-## 3            24007        0.394        0.548      3686        0.469
-## 4            15434        0.348        0.591      3742        0.456
-## 5            24633        0.297        0.658      8895        0.341
-##   per_gop_2012 diff_2012 winner partywinner16 winner12 partywinner12 flipped
-## 1        0.571      1955  Trump    Republican   Romney    Republican      No
-## 2        0.794     12023  Trump    Republican   Romney    Republican      No
-## 3        0.509       875  Trump    Republican   Romney    Republican      No
-## 4        0.532      1178  Trump    Republican   Romney    Republican      No
-## 5        0.643      6981  Trump    Republican   Romney    Republican      No</code></pre>
+## 1              527        0.296        0.590       155        0.433
+## 2            10816        0.252        0.701      4859        0.342
+## 3           118625        0.511        0.394     13799        0.543
+## 4            27042        0.245        0.717     12759        0.315
+## 5            64675        0.327        0.598     17558        0.383
+##   per_gop_2012 diff_2012  winner partywinner16 winner12 partywinner12 flipped
+## 1        0.543        66   Trump    Republican   Romney    Republican      No
+## 2        0.632      2825   Trump    Republican   Romney    Republican      No
+## 3        0.432     12233 Clinton      Democrat    Obama      Democrat      No
+## 4        0.671      9352   Trump    Republican   Romney    Republican      No
+## 5        0.590     14146   Trump    Republican   Romney    Republican      No</code></pre>
 <pre class="r"><code>glimpse(county_data)</code></pre>
 <pre><code>## Rows: 3,195
 ## Columns: 32
