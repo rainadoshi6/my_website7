@@ -3,7 +3,7 @@ categories:
 - ""
 - ""
 date: "2020-09-07"
-description: Is mask acceptance high in the US? NYT Survey analysis
+description: Is mask acceptance high or low in the US? NYT Survey analysis
 draft: false
 image: pic07.jpg
 keywords: ""
@@ -54,44 +54,44 @@ glimpse(nyt_mask_survey)</code></pre>
 # The id field is the FIPS code for the county
 county_map %&gt;% 
   sample_n(5)</code></pre>
-<pre><code>##      long     lat  order  hole piece            group    id
-## 1 -355346 -752985  32588 FALSE     1 0500000US08089.1 08089
-## 2  936569 -981396 154597 FALSE     1 0500000US47167.1 47167
-## 3  278224   19892 147866 FALSE     1 0500000US46051.1 46051
-## 4 2158330 -695178 123011 FALSE     4 0500000US37055.4 37055
-## 5 1537972 -183552 131237 FALSE     1 0500000US39085.1 39085</code></pre>
+<pre><code>##       long      lat order  hole piece            group    id
+## 1  1918989 -1687582 34717 FALSE     1 0500000US12009.1 12009
+## 2   826681 -1249024 19551 FALSE     1 0500000US05017.1 05017
+## 3 -1249683  -120257 49155 FALSE     1 0500000US16039.1 16039
+## 4  2231211   502857 77659 FALSE     1 0500000US23025.1 23025
+## 5  -562635  -456716 32899 FALSE     1 0500000US08107.1 08107</code></pre>
 <pre class="r"><code>county_data %&gt;%
     sample_n(5)</code></pre>
-<pre><code>##      id               name state census_region      pop_dens   pop_dens4
-## 1 35021     Harding County    NM          West [    0,   10) [  0,   17)
-## 2 54083    Randolph County    WV         South [   10,   50) [ 17,   45)
-## 3 53035      Kitsap County    WA          West [  500, 1000) [118,71672]
-## 4 47147   Robertson County    TN         South [  100,  500) [118,71672]
-## 5 30111 Yellowstone County    MT          West [   50,  100) [ 45,  118)
+<pre><code>##      id            name state census_region      pop_dens   pop_dens4
+## 1 39067 Harrison County    OH       Midwest [   10,   50) [ 17,   45)
+## 2 39101   Marion County    OH       Midwest [  100,  500) [118,71672]
+## 3 20161    Riley County    KS       Midwest [  100,  500) [118,71672]
+## 4 39085     Lake County    OH       Midwest [ 1000, 5000) [118,71672]
+## 5 34037   Sussex County    NJ     Northeast [  100,  500) [118,71672]
 ##     pop_dens6   pct_black    pop female white black travel_time land_area
-## 1 [  0,    9) [ 0.0, 2.0)    683   47.8  96.2   0.4        21.1      2125
-## 2 [ 25,   45) [ 0.0, 2.0)  29429   48.4  96.9   1.5        20.9      1040
-## 3 [215,71672] [ 2.0, 5.0) 254183   49.1  83.4   3.0        29.7       395
-## 4 [ 82,  215) [ 5.0,10.0)  68079   50.7  89.6   7.8        29.9       476
-## 5 [ 45,   82) [ 0.0, 2.0) 155634   51.0  91.5   0.8        19.0      2633
+## 1 [ 25,   45) [ 2.0, 5.0)  15543   50.6  95.8   2.2        29.1       402
+## 2 [ 82,  215) [ 5.0,10.0)  65720   46.9  91.1   6.3        22.1       404
+## 3 [ 82,  215) [ 5.0,10.0)  75194   46.7  84.5   6.9        16.2       610
+## 4 [215,71672] [ 2.0, 5.0) 229230   51.1  93.3   3.8        23.3       227
+## 5 [215,71672] [ 2.0, 5.0) 144909   50.3  94.3   2.1        37.7       519
 ##   hh_income su_gun4 su_gun6  fips votes_dem_2016 votes_gop_2016
-## 1     34063 [ 0, 5) [ 0, 4) 35021            156            311
-## 2     37276 [11,54] [10,12) 54083           2724           7583
-## 3     62413 [ 5, 8) [ 7, 8) 53035          60561          46762
-## 4     52792 [11,54] [10,12) 47147           6634          19393
-## 5     51342 [ 8,11) [10,12) 30111          21117          38675
+## 1     39002 [ 5, 8) [ 7, 8) 39067           1663           5021
+## 2     42572 [ 5, 8) [ 4, 7) 39101           7748          16563
+## 3     43962 [ 0, 5) [ 4, 7) 20161           8892           9817
+## 4     56018 [ 5, 8) [ 4, 7) 39085          45056          62627
+## 5     87335 [ 0, 5) [ 4, 7) 34037          24132          46486
 ##   total_votes_2016 per_dem_2016 per_gop_2016 diff_2016 per_dem_2012
-## 1              527        0.296        0.590       155        0.433
-## 2            10816        0.252        0.701      4859        0.342
-## 3           118625        0.511        0.394     13799        0.543
-## 4            27042        0.245        0.717     12759        0.315
-## 5            64675        0.327        0.598     17558        0.383
-##   per_gop_2012 diff_2012  winner partywinner16 winner12 partywinner12 flipped
-## 1        0.543        66   Trump    Republican   Romney    Republican      No
-## 2        0.632      2825   Trump    Republican   Romney    Republican      No
-## 3        0.432     12233 Clinton      Democrat    Obama      Democrat      No
-## 4        0.671      9352   Trump    Republican   Romney    Republican      No
-## 5        0.590     14146   Trump    Republican   Romney    Republican      No</code></pre>
+## 1             6956        0.239        0.722      3358        0.414
+## 2            25648        0.302        0.646      8815        0.451
+## 3            20475        0.434        0.479       925        0.424
+## 4           112790        0.399        0.555     17571        0.483
+## 5            73860        0.327        0.629     22354        0.379
+##   per_gop_2012 diff_2012 winner partywinner16 winner12 partywinner12 flipped
+## 1        0.562      1041  Trump    Republican   Romney    Republican      No
+## 2        0.527      2005  Trump    Republican   Romney    Republican      No
+## 3        0.551      2570  Trump    Republican   Romney    Republican      No
+## 4        0.500      1931  Trump    Republican   Romney    Republican      No
+## 5        0.603     13809  Trump    Republican   Romney    Republican      No</code></pre>
 <pre class="r"><code>glimpse(county_data)</code></pre>
 <pre><code>## Rows: 3,195
 ## Columns: 32

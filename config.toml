@@ -90,18 +90,19 @@ disqusShortname = ""
   [params.tiles]
     enable = true
     # Display your showcases here.
-    
+
+    [[params.tiles.showcase]]
+      title = "DJIA Risk/Return"
+      subtitle = "Risk-Return of DJIA stocks"
+      image = "pic99.jpeg"
+      url = "blogs/blog6"    
+
+
     [[params.tiles.showcase]]
       title = "NYT Masks"
       subtitle = "How does mask use acceptance vary in the US?"
       image = "pic11.jpg"
       url = "blogs/blog5"
-
-    [[params.tiles.showcase]]
-      title = "Tempus"
-      subtitle = "Feugiat Amet Tempus"
-      image = "pic02.jpg"
-      url = "blogs/tempus"
 
     [[params.tiles.showcase]]
       title = "Magna"
@@ -210,10 +211,10 @@ disqusShortname = ""
       url= "https://www.twitter.com/kostisc"
       label = "Twitter"
 
-    [[params.footer.social]]
-      icon = "fa-facebook"
-      url= "https://www.facebook.com"
-      label = "Facebook"
+#    [[params.footer.social]]
+#      icon = "fa-facebook"
+#      url= "https://www.facebook.com"
+#      label = "Facebook"
 
 #        [[params.footer.quicklinks]]
 #      text = "Design: "
