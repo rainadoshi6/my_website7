@@ -55,7 +55,7 @@ host = "your_host"
 
 # The blog button should not be removed.
 [params.blogButton]
-title = "Blog"
+title = "Projects"
 description = "Visit blog"
 
 [permalinks]
