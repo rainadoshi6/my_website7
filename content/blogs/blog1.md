@@ -7,13 +7,13 @@ description: "hi"
 draft: false  
 image: images/pic10.jpg
 keywords: "Introduction"
-slug: ipsum
-title: "Hello World RAINA"
+slug: blog1
+title: "Background"
 date: 2021-09-19T07:28:27+08:00
 layout: post
 tags: ["Say Hi", "Vno"]
 ---
-#### What's this
+Get to know me better and read on!
 
 [Vno Hugo](https://github.com/xslingcn/vno-hugo) is a theme for [Hugo](https://gohugo.io). It is a port of [onevcat](https://onevcat.com)'s [Vno Jekyll](https://github.com/onevcat/vno-jekyll), which is originally developed from [Dale Anthony's Uno](https://github.com/daleanthony/uno).
 
