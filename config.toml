@@ -1,5 +1,5 @@
 # Basic
-title = "RAINA DOSHI"
+title = "Raina Doshi"
 baseURL = "https://rainadoshi6-portfolio.netlify.app/"
 theme = "Vno Hugo"
 
@@ -22,7 +22,7 @@ paginatePath = "page"
     
 [params]
 author = "Raina Doshi"
-subtitle = "Welcome"
+subtitle = ""
 description = "Masters in Analytics and Management student at London Business School"
 welcomeMessage = "Passionate about trekking, cycling and adventures!"
 
@@ -42,11 +42,11 @@ repo = ""
 owner = ""
 
 [params.social]
-instagram = "https://instagram.com/rainadoshi98"
+#instagram = "https://instagram.com/rainadoshi98"
 github = "rainadoshi6"
 twitter = "rainadoshi"
-linkedin = "https://www.linkedin.com/in/rainadoshi6/"
-gplus = "107108267983477358170"
+#linkedin = "https://www.linkedin.com/in/rainadoshi6/"
+#gplus = "107108267983477358170"
 mail = "rdoshi.mam2022@london.edu"
 
 [params.ga]
