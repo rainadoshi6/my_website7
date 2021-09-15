@@ -12,9 +12,9 @@ paginatePath = "page"
 
 [menu]
   [[menu.main]]
-    name = "Projects"
+    name = "Resume"
     identifier = "projects"
-    url = "https://rainadoshi6-portfolio.netlify.app/"
+    url = "/cv/cv.pdf/"
     weight = 10
 
 [taxonomies]
