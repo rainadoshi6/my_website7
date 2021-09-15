@@ -22,9 +22,9 @@ paginatePath = "page"
     
 [params]
 author = "Raina Doshi"
-subtitle = "Computer Sciene Engineer • Masters in Analytics and Management student at London Business School"
-description = "Vno Hugo is a port of Vno Jekyll."
-welcomeMessage = "Oh What a World"
+subtitle = "Welcome"
+description = "Masters in Analytics and Management student at London Business School"
+welcomeMessage = "Passionate about trekking, cycling and adventures!"
 
 # supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
 coverColor = "grey"
