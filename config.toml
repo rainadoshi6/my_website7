@@ -1,8 +1,7 @@
 # Site settings
-baseURL = "https://kostis-portfolio.netlify.app/"
-languageCode = "en-us"
-title = "Portfolio website for Kostis"
-theme = "forty"
+title = "RAINA DOSHI"
+baseURL = "https://rainadoshi6-portfolio.netlify.app/"
+theme = "Vno Hugo"
 
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = ""
