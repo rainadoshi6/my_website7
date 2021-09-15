@@ -18,11 +18,11 @@ paginatePath = "page"
     weight = 10
 
 [taxonomies]
-    tag = "tags"
+    tag = "introduction"
     
 [params]
-author = "onevcat"
-subtitle = "A blog-orientation theme for Hugo"
+author = "Raina Doshi"
+subtitle = "Computer Sciene Engineer • Masters in Analytics and Management student at London Business School"
 description = "Vno Hugo is a port of Vno Jekyll."
 welcomeMessage = "Oh What a World"
 
