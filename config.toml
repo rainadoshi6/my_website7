@@ -27,8 +27,8 @@ description = "Vno Hugo is a port of Vno Jekyll."
 welcomeMessage = "Oh What a World"
 
 # supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
-coverColor = "blue"
-coverImge = ""
+coverColor = ""
+#coverImge = ""
 
 [params.comment]
 disqus = "vno-hugo"
