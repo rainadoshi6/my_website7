@@ -4,7 +4,7 @@ baseURL = "https://rainadoshi6-portfolio.netlify.app/"
 theme = "Vno Hugo"
 
 # Pagination
-paginate = 7
+paginate = 15
 paginatePath = "page"
 
 [outputs]
@@ -22,7 +22,7 @@ paginatePath = "page"
     
 [params]
 author = "Raina Doshi"
-subtitle = ""
+#subtitle = ""
 description = "Masters in Analytics and Management student at London Business School"
 welcomeMessage = "Passionate about trekking, cycling and adventures!"
 
