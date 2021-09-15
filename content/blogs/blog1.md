@@ -3,12 +3,36 @@ categories:
 - ""
 - ""
 date: "2017-10-31T21:28:43-05:00"
-description: ""
-draft: false
-image: pic10.jpg
-keywords: ""
+description: "hi"
+draft: false  
+image: images/pic10.jpg
+keywords: "Introduction"
 slug: ipsum
-title: Ipsum
+title: "Hello World RAINA"
+date: 2021-09-19T07:28:27+08:00
+layout: post
+tags: ["Say Hi", "Vno"]
 ---
+#### What's this
 
-Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.
+[Vno Hugo](https://github.com/xslingcn/vno-hugo) is a theme for [Hugo](https://gohugo.io). It is a port of [onevcat](https://onevcat.com)'s [Vno Jekyll](https://github.com/onevcat/vno-jekyll), which is originally developed from [Dale Anthony's Uno](https://github.com/daleanthony/uno).
+
+#### Usage
+Inside the folder of your Hugo site run:
+```bash
+$ git submodule add https://github.com/xslingcn/vno-hugo.git themes/vno-hugo
+```
+Copy everything in the `exampleSite` folder to the root of your hugo site, then run `hugo serve`. Your site with `Vno Hugo` enabled should be accessible in http://localhost:1313/.
+
+For more information about Hugo, please visit [Hugo's site](https://gohugo.io).
+
+#### Configuration
+
+All configuration could be done in `config.yml`. Everything in the config file should be self-explanatory.
+
+If you want to enable MathJax support, set `math` param in the front matter to `true`.
+
+#### Background image and avatar
+
+You could replace the background and avatar image in `static/images` folder to change them.
+
