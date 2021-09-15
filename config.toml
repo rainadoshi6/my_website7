@@ -28,6 +28,7 @@ welcomeMessage = "Oh What a World"
 
 # supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
 coverColor = "blue"
+coverImge = ""
 
 [params.comment]
 disqus = "vno-hugo"
@@ -41,11 +42,12 @@ repo = ""
 owner = ""
 
 [params.social]
-weibo = "onevcat"
-github = "onevcat"
-twitter = "onevcat"
+instagram = "https://instagram.com/rainadoshi98"
+github = "https://github.com/rainadoshi6"
+twitter = "https://twitter.com/rainadoshi"
+linkedin = "https://www.linkedin.com/in/rainadoshi6/"
 gplus = "107108267983477358170"
-mail = "onev@onevcat.com"
+mail = "rdoshi.mam2022@london.edu"
 
 [params.ga]
 ID = "your_ga_id"
