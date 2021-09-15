@@ -1,9 +1,9 @@
 ---
 title: "Hello R Markdown"
-author: "Frida Gomam"
-date: 2015-07-23T21:13:14-05:00
+author: "Raina Doshi"
+date: 2021-09-20
 categories: ["R"]
-tags: ["R Markdown", "plot", "regression"]
+tags: ["R Markdown", "Plots", "Analytics"]
 ---
 
 ```{r setup, include=FALSE}
