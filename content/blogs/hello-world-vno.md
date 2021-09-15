@@ -1,19 +1,12 @@
 ---
-categories:
-- ""
-- ""
-date: "2017-10-31T21:28:43-05:00"
-description: "hi"
-draft: false  
-image: images/pic10.jpg
-keywords: "Introduction"
-slug: blog1
-title: "Background"
-date: 2021-09-19T07:28:27+08:00
 layout: post
 tags: ["Say Hi", "Vno"]
+title: "Hello World Vno"
+date: 2021-07-19T07:28:27+08:00
+math: false
+draft: false
 ---
-Get to know me better and read on!
+#### What's this
 
 [Vno Hugo](https://github.com/xslingcn/vno-hugo) is a theme for [Hugo](https://gohugo.io). It is a port of [onevcat](https://onevcat.com)'s [Vno Jekyll](https://github.com/onevcat/vno-jekyll), which is originally developed from [Dale Anthony's Uno](https://github.com/daleanthony/uno).
 
