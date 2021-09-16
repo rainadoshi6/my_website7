@@ -1,10 +1,12 @@
 ---
+title: "Hello World rd"
+tags:
+- Say Hi
+- Vno
+date: '2021-07-19T07:28:27+08:00'
 layout: post
-tags: ["Say Hi", "Vno"]
-title: "Hello World yuan"
-date: 2021-07-19T07:28:27+08:00
-math: false
-draft: false
+math: no
+draft: no
 ---
 
 # Hello
@@ -69,6 +71,7 @@ Inside the folder of your Hugo site run:
 ```bash
 $ git submodule add https://github.com/xslingcn/vno-hugo.git themes/vno-hugo
 ```
+
 Copy everything in the `exampleSite` folder to the root of your hugo site, then run `hugo serve`. Your site with `Vno Hugo` enabled should be accessible in http://localhost:1313/.
 
 For more information about Hugo, please visit [Hugo's site](https://gohugo.io).
