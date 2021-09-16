@@ -1,7 +1,10 @@
 ---
 title: "Work Experience"
-date: '2021-07-19T07:28:27+08:00'
+date: '2021-07-18'
 layout: post
+tags:
+- WorkExperience
+- Career
 output: html_document
 slug : magna
 draft: false
