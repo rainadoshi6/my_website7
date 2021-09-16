@@ -7,7 +7,7 @@ description: Is mask acceptance high or low in the US? NYT Survey analysis
 draft: false
 image: pic07.jpg
 keywords: ""
-slug: blog5
+slug: aliquam
 title: Mask Acceptance
 ---
 
@@ -56,43 +56,43 @@ glimpse(nyt_mask_survey)</code></pre>
 county_map %&gt;% 
   sample_n(5)</code></pre>
 <pre><code>##       long      lat  order  hole piece            group    id
-## 1   621103   219436 187537 FALSE     1 0500000US55031.1 55031
-## 2 -1363402 -1184254  17633 FALSE     1 0500000US04012.1 04012
-## 3 -1623076  -135415 137599 FALSE     1 0500000US41037.1 41037
-## 4  1448183 -1321222  46647 FALSE     1 0500000US13307.1 13307
-## 5   562580  -652813 102220 FALSE     1 0500000US29101.1 29101</code></pre>
+## 1   259382 -1237057 134568 FALSE     1 0500000US40085.1 40085
+## 2  1562503  -941448 144982 FALSE     1 0500000US45045.1 45045
+## 3  1416218 -1362908  40661 FALSE     1 0500000US13061.1 13061
+## 4   871515   172581 187660 FALSE     1 0500000US55037.1 55037
+## 5 -1529603   458156 177154 FALSE     1 0500000US53007.1 53007</code></pre>
 <pre class="r"><code>county_data %&gt;%
     sample_n(5)</code></pre>
 <pre><code>##      id            name state census_region      pop_dens   pop_dens4
-## 1 18147  Spencer County    IN       Midwest [   50,  100) [ 45,  118)
-## 2 40025 Cimarron County    OK         South [    0,   10) [  0,   17)
-## 3 13283 Treutlen County    GA         South [   10,   50) [ 17,   45)
-## 4 13091    Dodge County    GA         South [   10,   50) [ 17,   45)
-## 5 17167 Sangamon County    IL       Midwest [  100,  500) [118,71672]
-##     pop_dens6   pct_black    pop female white black travel_time land_area
-## 1 [ 45,   82) [ 0.0, 2.0)  20801   49.5  97.7   0.8        26.8       397
-## 2 [  0,    9) [ 0.0, 2.0)   2294   50.4  96.1   0.3        15.0      1835
-## 3 [ 25,   45) [25.0,50.0)   6778   49.6  65.7  32.7        26.0       199
-## 4 [ 25,   45) [25.0,50.0)  20976   47.5  68.1  29.9        24.2       496
-## 5 [215,71672] [10.0,15.0) 198997   52.1  83.4  12.2        18.9       868
+## 1 51197    Wythe County    VA         South [   50,  100) [ 45,  118)
+## 2 39061 Hamilton County    OH       Midwest [ 1000, 5000) [118,71672]
+## 3 48365   Panola County    TX         South [   10,   50) [ 17,   45)
+## 4 21135    Lewis County    KY         South [   10,   50) [ 17,   45)
+## 5 36059   Nassau County    NY     Northeast [ 1000, 5000) [118,71672]
+##     pop_dens6   pct_black     pop female white black travel_time land_area
+## 1 [ 45,   82) [ 2.0, 5.0)   29121   51.1  95.0   3.0        21.3       462
+## 2 [215,71672] [25.0,50.0)  806631   51.8  69.2  26.0        22.7       406
+## 3 [ 25,   45) [15.0,25.0)   23769   50.5  81.0  16.0        24.8       802
+## 4 [ 25,   45) [ 0.0, 2.0)   13880   50.3  98.6   0.4        31.4       483
+## 5 [215,71672] [10.0,15.0) 1358627   51.5  76.7  12.4        34.0       285
 ##   hh_income su_gun4 su_gun6  fips votes_dem_2016 votes_gop_2016
-## 1     52991 [ 5, 8) [ 7, 8) 18147           2861           6572
-## 2     38301 [ 0, 5) [ 0, 4) 40025             70            962
-## 3     37894 [11,54] [10,12) 13283            860           1808
-## 4     37292 [ 8,11) [ 8,10) 13091           1836           5021
-## 5     55449 [ 0, 5) [ 4, 7) 17167          40731          49823
+## 1     41275 [11,54] [10,12) 51197           2765          10044
+## 2     48593 [ 0, 5) [ 4, 7) 39061         207587         169972
+## 3     52453 [ 8,11) [ 8,10) 48365           1835           8445
+## 4     28388 [ 8,11) [ 8,10) 21135            785           4363
+## 5     97690 [ 0, 5) [ 0, 4) 36059         307326         275479
 ##   total_votes_2016 per_dem_2016 per_gop_2016 diff_2016 per_dem_2012
-## 1             9959        0.287        0.660      3711       0.4140
-## 2             1077        0.065        0.893       892       0.0961
-## 3             2700        0.319        0.670       948       0.3901
-## 4             6995        0.262        0.718      3185       0.3156
-## 5            96472        0.422        0.516      9092       0.4462
-##   per_gop_2012 diff_2012 winner partywinner16 winner12 partywinner12 flipped
-## 1        0.567      1489  Trump    Republican   Romney    Republican      No
-## 2        0.904       967  Trump    Republican   Romney    Republican      No
-## 3        0.601       578  Trump    Republican   Romney    Republican      No
-## 4        0.674      2774  Trump    Republican   Romney    Republican      No
-## 5        0.533      8170  Trump    Republican   Romney    Republican      No</code></pre>
+## 1            13250        0.209        0.758      7279        0.307
+## 2           395000        0.526        0.430     37615        0.518
+## 3            10413        0.176        0.811      6610        0.216
+## 4             5293        0.148        0.824      3578        0.281
+## 5           599649        0.513        0.459     31847        0.529
+##   per_gop_2012 diff_2012  winner partywinner16 winner12 partywinner12 flipped
+## 1        0.675      4542   Trump    Republican   Romney    Republican      No
+## 2        0.469     19855 Clinton      Democrat    Obama      Democrat      No
+## 3        0.777      5730   Trump    Republican   Romney    Republican      No
+## 4        0.697      1984   Trump    Republican   Romney    Republican      No
+## 5        0.462     30767 Clinton      Democrat    Obama      Democrat      No</code></pre>
 <pre class="r"><code>glimpse(county_data)</code></pre>
 <pre><code>## Rows: 3,195
 ## Columns: 32
