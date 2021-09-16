@@ -1,6 +1,6 @@
 # Basic
 title = "Raina Doshi"
-baseURL = "https://rainadoshi6-portfolio.netlify.app/"
+baseURL = "https://rainadoshi.netlify.app/"
 theme = "Vno Hugo"
 
 # Pagination

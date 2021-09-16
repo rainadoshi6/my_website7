@@ -11,6 +11,7 @@ slug: blog5
 title: Mask Acceptance
 ---
 
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
 <div id="nyt-mask-use" class="section level2">
@@ -35,15 +36,15 @@ nyt_mask_survey &lt;- nyt_mask_survey %&gt;%
 glimpse(nyt_mask_survey)</code></pre>
 <pre><code>## Rows: 3,142
 ## Columns: 9
-## $ countyfp   &lt;chr&gt; &quot;01001&quot;, &quot;01003&quot;, &quot;01005&quot;, &quot;01007&quot;, &quot;01009&quot;, &quot;01011&quot;, &quot;0...
-## $ never      &lt;dbl&gt; 0.053, 0.083, 0.067, 0.020, 0.053, 0.031, 0.102, 0.152, ...
-## $ rarely     &lt;dbl&gt; 0.074, 0.059, 0.121, 0.034, 0.114, 0.040, 0.053, 0.108, ...
-## $ sometimes  &lt;dbl&gt; 0.134, 0.098, 0.120, 0.096, 0.180, 0.144, 0.257, 0.130, ...
-## $ frequently &lt;dbl&gt; 0.295, 0.323, 0.201, 0.278, 0.194, 0.286, 0.137, 0.167, ...
-## $ always     &lt;dbl&gt; 0.444, 0.436, 0.491, 0.572, 0.459, 0.500, 0.451, 0.442, ...
-## $ mostly_yes &lt;dbl&gt; 0.739, 0.759, 0.692, 0.850, 0.653, 0.786, 0.588, 0.609, ...
-## $ mostly_no  &lt;dbl&gt; 0.127, 0.142, 0.188, 0.054, 0.167, 0.071, 0.155, 0.260, ...
-## $ delta      &lt;dbl&gt; 0.612, 0.617, 0.504, 0.796, 0.486, 0.715, 0.433, 0.349, ...</code></pre>
+## $ countyfp   &lt;chr&gt; &quot;01001&quot;, &quot;01003&quot;, &quot;01005&quot;, &quot;01007&quot;, &quot;01009&quot;, &quot;01011&quot;, &quot;0101~
+## $ never      &lt;dbl&gt; 0.053, 0.083, 0.067, 0.020, 0.053, 0.031, 0.102, 0.152, 0.1~
+## $ rarely     &lt;dbl&gt; 0.074, 0.059, 0.121, 0.034, 0.114, 0.040, 0.053, 0.108, 0.0~
+## $ sometimes  &lt;dbl&gt; 0.134, 0.098, 0.120, 0.096, 0.180, 0.144, 0.257, 0.130, 0.1~
+## $ frequently &lt;dbl&gt; 0.295, 0.323, 0.201, 0.278, 0.194, 0.286, 0.137, 0.167, 0.1~
+## $ always     &lt;dbl&gt; 0.444, 0.436, 0.491, 0.572, 0.459, 0.500, 0.451, 0.442, 0.5~
+## $ mostly_yes &lt;dbl&gt; 0.739, 0.759, 0.692, 0.850, 0.653, 0.786, 0.588, 0.609, 0.6~
+## $ mostly_no  &lt;dbl&gt; 0.127, 0.142, 0.188, 0.054, 0.167, 0.071, 0.155, 0.260, 0.1~
+## $ delta      &lt;dbl&gt; 0.612, 0.617, 0.504, 0.796, 0.486, 0.715, 0.433, 0.349, 0.5~</code></pre>
 </div>
 <div id="choropleth-maps" class="section level2">
 <h2>Choropleth maps</h2>
@@ -54,91 +55,91 @@ glimpse(nyt_mask_survey)</code></pre>
 # The id field is the FIPS code for the county
 county_map %&gt;% 
   sample_n(5)</code></pre>
-<pre><code>##       long      lat order  hole piece            group    id
-## 1  1918989 -1687582 34717 FALSE     1 0500000US12009.1 12009
-## 2   826681 -1249024 19551 FALSE     1 0500000US05017.1 05017
-## 3 -1249683  -120257 49155 FALSE     1 0500000US16039.1 16039
-## 4  2231211   502857 77659 FALSE     1 0500000US23025.1 23025
-## 5  -562635  -456716 32899 FALSE     1 0500000US08107.1 08107</code></pre>
+<pre><code>##      long      lat  order  hole piece            group    id
+## 1  756128  -563818  53810 FALSE     1 0500000US17149.1 17149
+## 2  349859  -453027 109876 FALSE     1 0500000US31025.1 31025
+## 3  427998 -1008416 133214 FALSE     1 0500000US40021.1 40021
+## 4 1833947 -1172282 144121 FALSE     1 0500000US45019.1 45019
+## 5 -869737    31651 191034 FALSE     1 0500000US56029.1 56029</code></pre>
 <pre class="r"><code>county_data %&gt;%
     sample_n(5)</code></pre>
 <pre><code>##      id            name state census_region      pop_dens   pop_dens4
-## 1 39067 Harrison County    OH       Midwest [   10,   50) [ 17,   45)
-## 2 39101   Marion County    OH       Midwest [  100,  500) [118,71672]
-## 3 20161    Riley County    KS       Midwest [  100,  500) [118,71672]
-## 4 39085     Lake County    OH       Midwest [ 1000, 5000) [118,71672]
-## 5 34037   Sussex County    NJ     Northeast [  100,  500) [118,71672]
+## 1 48099  Coryell County    TX         South [   50,  100) [ 45,  118)
+## 2 17117 Macoupin County    IL       Midwest [   50,  100) [ 45,  118)
+## 3 19143  Osceola County    IA       Midwest [   10,   50) [  0,   17)
+## 4 47093     Knox County    TN         South [  500, 1000) [118,71672]
+## 5 48151   Fisher County    TX         South [    0,   10) [  0,   17)
 ##     pop_dens6   pct_black    pop female white black travel_time land_area
-## 1 [ 25,   45) [ 2.0, 5.0)  15543   50.6  95.8   2.2        29.1       402
-## 2 [ 82,  215) [ 5.0,10.0)  65720   46.9  91.1   6.3        22.1       404
-## 3 [ 82,  215) [ 5.0,10.0)  75194   46.7  84.5   6.9        16.2       610
-## 4 [215,71672] [ 2.0, 5.0) 229230   51.1  93.3   3.8        23.3       227
-## 5 [215,71672] [ 2.0, 5.0) 144909   50.3  94.3   2.1        37.7       519
+## 1 [ 45,   82) [15.0,25.0)  75562   50.3  74.6  17.2        20.1      1052
+## 2 [ 45,   82) [ 0.0, 2.0)  46453   50.6  97.2   1.0        27.7       863
+## 3 [  9,   25) [ 0.0, 2.0)   6218   49.4  97.8   0.4        18.9       399
+## 4 [215,71672] [ 5.0,10.0) 448644   51.4  86.4   9.1        21.4       508
+## 5 [  0,    9) [ 2.0, 5.0)   3831   50.4  93.1   3.8        20.9       899
 ##   hh_income su_gun4 su_gun6  fips votes_dem_2016 votes_gop_2016
-## 1     39002 [ 5, 8) [ 7, 8) 39067           1663           5021
-## 2     42572 [ 5, 8) [ 4, 7) 39101           7748          16563
-## 3     43962 [ 0, 5) [ 4, 7) 20161           8892           9817
-## 4     56018 [ 5, 8) [ 4, 7) 39085          45056          62627
-## 5     87335 [ 0, 5) [ 4, 7) 34037          24132          46486
+## 1     49819 [ 5, 8) [ 4, 7) 48099           5057          12212
+## 2     49590 [ 5, 8) [ 4, 7) 17117           6532          14194
+## 3     48659 [ 0, 5) [ 0, 4) 19143            552           2528
+## 4     47694 [ 8,11) [ 8,10) 47093          62861         105724
+## 5     42125 [ 0, 5) [ 0, 4) 48151            403           1265
 ##   total_votes_2016 per_dem_2016 per_gop_2016 diff_2016 per_dem_2012
-## 1             6956        0.239        0.722      3358        0.414
-## 2            25648        0.302        0.646      8815        0.451
-## 3            20475        0.434        0.479       925        0.424
-## 4           112790        0.399        0.555     17571        0.483
-## 5            73860        0.327        0.629     22354        0.379
+## 1            18127        0.279        0.674      7155        0.311
+## 2            21881        0.299        0.649      7662        0.451
+## 3             3197        0.173        0.791      1976        0.286
+## 4           179266        0.351        0.590     42863        0.344
+## 5             1722        0.234        0.735       862        0.314
 ##   per_gop_2012 diff_2012 winner partywinner16 winner12 partywinner12 flipped
-## 1        0.562      1041  Trump    Republican   Romney    Republican      No
-## 2        0.527      2005  Trump    Republican   Romney    Republican      No
-## 3        0.551      2570  Trump    Republican   Romney    Republican      No
-## 4        0.500      1931  Trump    Republican   Romney    Republican      No
-## 5        0.603     13809  Trump    Republican   Romney    Republican      No</code></pre>
+## 1        0.676      6052  Trump    Republican   Romney    Republican      No
+## 2        0.521      1469  Trump    Republican   Romney    Republican      No
+## 3        0.700      1316  Trump    Republican   Romney    Republican      No
+## 4        0.636     48817  Trump    Republican   Romney    Republican      No
+## 5        0.672       582  Trump    Republican   Romney    Republican      No</code></pre>
 <pre class="r"><code>glimpse(county_data)</code></pre>
 <pre><code>## Rows: 3,195
 ## Columns: 32
-## $ id               &lt;chr&gt; &quot;0&quot;, &quot;01000&quot;, &quot;01001&quot;, &quot;01003&quot;, &quot;01005&quot;, &quot;01007&quot;, ...
-## $ name             &lt;chr&gt; NA, &quot;1&quot;, &quot;Autauga County&quot;, &quot;Baldwin County&quot;, &quot;Barb...
-## $ state            &lt;fct&gt; NA, AL, AL, AL, AL, AL, AL, AL, AL, AL, AL, AL, AL...
-## $ census_region    &lt;fct&gt; NA, South, South, South, South, South, South, Sout...
-## $ pop_dens         &lt;fct&gt; &quot;[   50,  100)&quot;, &quot;[   50,  100)&quot;, &quot;[   50,  100)&quot;,...
-## $ pop_dens4        &lt;fct&gt; &quot;[ 45,  118)&quot;, &quot;[ 45,  118)&quot;, &quot;[ 45,  118)&quot;, &quot;[118...
-## $ pop_dens6        &lt;fct&gt; &quot;[ 82,  215)&quot;, &quot;[ 82,  215)&quot;, &quot;[ 82,  215)&quot;, &quot;[ 82...
-## $ pct_black        &lt;fct&gt; &quot;[10.0,15.0)&quot;, &quot;[25.0,50.0)&quot;, &quot;[15.0,25.0)&quot;, &quot;[ 5....
-## $ pop              &lt;int&gt; 318857056, 4849377, 55395, 200111, 26887, 22506, 5...
-## $ female           &lt;dbl&gt; 50.8, 51.5, 51.5, 51.2, 46.5, 46.0, 50.6, 45.2, 53...
-## $ white            &lt;dbl&gt; 77.7, 69.8, 78.1, 87.3, 50.2, 76.3, 96.0, 27.2, 54...
-## $ black            &lt;dbl&gt; 13.2, 26.6, 18.4, 9.5, 47.6, 22.1, 1.8, 69.9, 43.6...
-## $ travel_time      &lt;dbl&gt; 25.5, 24.2, 26.2, 25.9, 24.6, 27.6, 33.9, 26.9, 24...
-## $ land_area        &lt;dbl&gt; 3531905, 50645, 594, 1590, 885, 623, 645, 623, 777...
-## $ hh_income        &lt;int&gt; 53046, 43253, 53682, 50221, 32911, 36447, 44145, 3...
-## $ su_gun4          &lt;fct&gt; NA, NA, &quot;[11,54]&quot;, &quot;[11,54]&quot;, &quot;[ 5, 8)&quot;, &quot;[11,54]&quot;...
-## $ su_gun6          &lt;fct&gt; NA, NA, &quot;[10,12)&quot;, &quot;[10,12)&quot;, &quot;[ 7, 8)&quot;, &quot;[10,12)&quot;...
-## $ fips             &lt;dbl&gt; 0, 1000, 1001, 1003, 1005, 1007, 1009, 1011, 1013,...
-## $ votes_dem_2016   &lt;int&gt; NA, NA, 5908, 18409, 4848, 1874, 2150, 3530, 3716,...
-## $ votes_gop_2016   &lt;int&gt; NA, NA, 18110, 72780, 5431, 6733, 22808, 1139, 489...
-## $ total_votes_2016 &lt;int&gt; NA, NA, 24661, 94090, 10390, 8748, 25384, 4701, 86...
-## $ per_dem_2016     &lt;dbl&gt; NA, NA, 0.2396, 0.1957, 0.4666, 0.2142, 0.0847, 0....
-## $ per_gop_2016     &lt;dbl&gt; NA, NA, 0.734, 0.774, 0.523, 0.770, 0.899, 0.242, ...
-## $ diff_2016        &lt;int&gt; NA, NA, 12202, 54371, 583, 4859, 20658, 2391, 1175...
-## $ per_dem_2012     &lt;dbl&gt; NA, NA, 0.266, 0.216, 0.513, 0.262, 0.123, 0.763, ...
-## $ per_gop_2012     &lt;dbl&gt; NA, NA, 0.726, 0.774, 0.483, 0.731, 0.865, 0.235, ...
-## $ diff_2012        &lt;int&gt; NA, NA, 11012, 47443, 334, 3931, 17780, 2808, 714,...
-## $ winner           &lt;chr&gt; NA, NA, &quot;Trump&quot;, &quot;Trump&quot;, &quot;Trump&quot;, &quot;Trump&quot;, &quot;Trump...
-## $ partywinner16    &lt;chr&gt; NA, NA, &quot;Republican&quot;, &quot;Republican&quot;, &quot;Republican&quot;, ...
-## $ winner12         &lt;chr&gt; NA, NA, &quot;Romney&quot;, &quot;Romney&quot;, &quot;Obama&quot;, &quot;Romney&quot;, &quot;Ro...
-## $ partywinner12    &lt;chr&gt; NA, NA, &quot;Republican&quot;, &quot;Republican&quot;, &quot;Democrat&quot;, &quot;R...
-## $ flipped          &lt;chr&gt; NA, NA, &quot;No&quot;, &quot;No&quot;, &quot;Yes&quot;, &quot;No&quot;, &quot;No&quot;, &quot;No&quot;, &quot;No&quot;,...</code></pre>
+## $ id               &lt;chr&gt; &quot;0&quot;, &quot;01000&quot;, &quot;01001&quot;, &quot;01003&quot;, &quot;01005&quot;, &quot;01007&quot;, &quot;01~
+## $ name             &lt;chr&gt; NA, &quot;1&quot;, &quot;Autauga County&quot;, &quot;Baldwin County&quot;, &quot;Barbour~
+## $ state            &lt;fct&gt; NA, AL, AL, AL, AL, AL, AL, AL, AL, AL, AL, AL, AL, A~
+## $ census_region    &lt;fct&gt; NA, South, South, South, South, South, South, South, ~
+## $ pop_dens         &lt;fct&gt; &quot;[   50,  100)&quot;, &quot;[   50,  100)&quot;, &quot;[   50,  100)&quot;, &quot;[~
+## $ pop_dens4        &lt;fct&gt; &quot;[ 45,  118)&quot;, &quot;[ 45,  118)&quot;, &quot;[ 45,  118)&quot;, &quot;[118,71~
+## $ pop_dens6        &lt;fct&gt; &quot;[ 82,  215)&quot;, &quot;[ 82,  215)&quot;, &quot;[ 82,  215)&quot;, &quot;[ 82,  ~
+## $ pct_black        &lt;fct&gt; &quot;[10.0,15.0)&quot;, &quot;[25.0,50.0)&quot;, &quot;[15.0,25.0)&quot;, &quot;[ 5.0,1~
+## $ pop              &lt;int&gt; 318857056, 4849377, 55395, 200111, 26887, 22506, 5771~
+## $ female           &lt;dbl&gt; 50.8, 51.5, 51.5, 51.2, 46.5, 46.0, 50.6, 45.2, 53.4,~
+## $ white            &lt;dbl&gt; 77.7, 69.8, 78.1, 87.3, 50.2, 76.3, 96.0, 27.2, 54.3,~
+## $ black            &lt;dbl&gt; 13.2, 26.6, 18.4, 9.5, 47.6, 22.1, 1.8, 69.9, 43.6, 2~
+## $ travel_time      &lt;dbl&gt; 25.5, 24.2, 26.2, 25.9, 24.6, 27.6, 33.9, 26.9, 24.0,~
+## $ land_area        &lt;dbl&gt; 3531905, 50645, 594, 1590, 885, 623, 645, 623, 777, 6~
+## $ hh_income        &lt;int&gt; 53046, 43253, 53682, 50221, 32911, 36447, 44145, 3203~
+## $ su_gun4          &lt;fct&gt; NA, NA, &quot;[11,54]&quot;, &quot;[11,54]&quot;, &quot;[ 5, 8)&quot;, &quot;[11,54]&quot;, &quot;~
+## $ su_gun6          &lt;fct&gt; NA, NA, &quot;[10,12)&quot;, &quot;[10,12)&quot;, &quot;[ 7, 8)&quot;, &quot;[10,12)&quot;, &quot;~
+## $ fips             &lt;dbl&gt; 0, 1000, 1001, 1003, 1005, 1007, 1009, 1011, 1013, 10~
+## $ votes_dem_2016   &lt;int&gt; NA, NA, 5908, 18409, 4848, 1874, 2150, 3530, 3716, 13~
+## $ votes_gop_2016   &lt;int&gt; NA, NA, 18110, 72780, 5431, 6733, 22808, 1139, 4891, ~
+## $ total_votes_2016 &lt;int&gt; NA, NA, 24661, 94090, 10390, 8748, 25384, 4701, 8685,~
+## $ per_dem_2016     &lt;dbl&gt; NA, NA, 0.2396, 0.1957, 0.4666, 0.2142, 0.0847, 0.750~
+## $ per_gop_2016     &lt;dbl&gt; NA, NA, 0.734, 0.774, 0.523, 0.770, 0.899, 0.242, 0.5~
+## $ diff_2016        &lt;int&gt; NA, NA, 12202, 54371, 583, 4859, 20658, 2391, 1175, 1~
+## $ per_dem_2012     &lt;dbl&gt; NA, NA, 0.266, 0.216, 0.513, 0.262, 0.123, 0.763, 0.4~
+## $ per_gop_2012     &lt;dbl&gt; NA, NA, 0.726, 0.774, 0.483, 0.731, 0.865, 0.235, 0.5~
+## $ diff_2012        &lt;int&gt; NA, NA, 11012, 47443, 334, 3931, 17780, 2808, 714, 14~
+## $ winner           &lt;chr&gt; NA, NA, &quot;Trump&quot;, &quot;Trump&quot;, &quot;Trump&quot;, &quot;Trump&quot;, &quot;Trump&quot;, ~
+## $ partywinner16    &lt;chr&gt; NA, NA, &quot;Republican&quot;, &quot;Republican&quot;, &quot;Republican&quot;, &quot;Re~
+## $ winner12         &lt;chr&gt; NA, NA, &quot;Romney&quot;, &quot;Romney&quot;, &quot;Obama&quot;, &quot;Romney&quot;, &quot;Romne~
+## $ partywinner12    &lt;chr&gt; NA, NA, &quot;Republican&quot;, &quot;Republican&quot;, &quot;Democrat&quot;, &quot;Repu~
+## $ flipped          &lt;chr&gt; NA, NA, &quot;No&quot;, &quot;No&quot;, &quot;Yes&quot;, &quot;No&quot;, &quot;No&quot;, &quot;No&quot;, &quot;No&quot;, &quot;N~</code></pre>
 <pre class="r"><code># we have data on 3195 FIPS....
 
 glimpse(county_map)</code></pre>
 <pre><code>## Rows: 191,382
 ## Columns: 7
-## $ long  &lt;dbl&gt; 1225889, 1235324, 1244873, 1244129, 1272010, 1276797, 1273832...
-## $ lat   &lt;dbl&gt; -1275020, -1274008, -1272331, -1267515, -1262889, -1295514, -...
-## $ order &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18...
-## $ hole  &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE...
-## $ piece &lt;fct&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1...
-## $ group &lt;fct&gt; 0500000US01001.1, 0500000US01001.1, 0500000US01001.1, 0500000...
-## $ id    &lt;chr&gt; &quot;01001&quot;, &quot;01001&quot;, &quot;01001&quot;, &quot;01001&quot;, &quot;01001&quot;, &quot;01001&quot;, &quot;01001&quot;...</code></pre>
+## $ long  &lt;dbl&gt; 1225889, 1235324, 1244873, 1244129, 1272010, 1276797, 1273832, 1~
+## $ lat   &lt;dbl&gt; -1275020, -1274008, -1272331, -1267515, -1262889, -1295514, -129~
+## $ order &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 1~
+## $ hole  &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, F~
+## $ piece &lt;fct&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1~
+## $ group &lt;fct&gt; 0500000US01001.1, 0500000US01001.1, 0500000US01001.1, 0500000US0~
+## $ id    &lt;chr&gt; &quot;01001&quot;, &quot;01001&quot;, &quot;01001&quot;, &quot;01001&quot;, &quot;01001&quot;, &quot;01001&quot;, &quot;01001&quot;, &quot;~</code></pre>
 <pre class="r"><code># ... but to create a map, we translate these 3195 counties to 191,382 polygons!</code></pre>
 </div>
 <div id="joing-the-files" class="section level2">
