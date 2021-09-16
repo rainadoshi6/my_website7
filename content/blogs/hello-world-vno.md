@@ -6,7 +6,7 @@ date: 2021-07-19T07:28:27+08:00
 math: false
 draft: false
 ---
-#### This section gives you a brief introduction of me
+#### 
 
 Born and brought up in Mumbai, India, I 
 I pursued my Bachelors in Computer Science Engineering from Manipal Institute of Technology. Located in a small town in Southern India, Manipal is a student township where I had an enriching academic experience and created bonds for a lifetime. 
