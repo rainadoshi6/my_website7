@@ -2,8 +2,9 @@
 title: "WORK EXPERIENCE"
 date: '2021-07-19T07:28:27+08:00'
 layout: post
-math: no
+output: HTML_document
 draft: no
+math: no
 ---
 
 # Hello
