@@ -24,7 +24,9 @@ Born and brought up in Mumbai, India, I completed my schooling from Bombay Scott
  
 <!--img align="left" width="200" height="150" src="dell2.png"-->
 
-**Winter Intern at [Dell Technologies](https://www.delltechnologies.com/en-gb/index.htm) | January 2020 - May 2020**
+<img align="right" top="1200" width="200" height="150" topmargin="5000" src="/images/dell.png">
+
+**Winter Intern at [Dell Technologies](https://www.delltechnologies.com/en-gb/index.htm) | Bangalore, India | January 2020 - May 2020**
 
 * Built a novel dashboard to visualize trends and forecast values of key performance indices for Tech Support Team of North America to monitor the health of the business and customer satisfaction daily
 * Implemented multilincgual text mining techniques fo 
@@ -35,7 +37,7 @@ Born and brought up in Mumbai, India, I completed my schooling from Bombay Scott
  
 <img align="right" width="150" height="100" src="/images/EY.png">
 
-**Summer Intern at [Ernst & Young](https://www.ey.com/en_in) | May 2019 - June 2019**
+**Summer Intern at [Ernst & Young](https://www.ey.com/en_in) | Mumbai, India | May 2019 - June 2019**
 
 * Built a novel dashboard to visualize trends and forecast values of key performance indices for Tech Support Team of North America to monitor the health of the business and customer satisfaction daily
 * Implemented multilincgual text mining techniques fo 
@@ -43,10 +45,26 @@ Born and brought up in Mumbai, India, I completed my schooling from Bombay Scott
 
 <img align="right" width="150" height="80" src="/images/intellect.png">
 
-**Intern at [Intellect Design Arena](https://www.intellectdesign.com/about-us) | December 2018**
+**Intern at [Intellect Design Arena](https://www.intellectdesign.com/about-us) | Mumbai, India | December 2018**
 
 * Built a novel dashboard to visualize trends and forecast values of key performance indices for Tech Support Team of North America to monitor the health of the business and customer satisfaction daily
 * Implemented multilincgual text mining techniques fo 
+
+
+<img align="right" width="150" height="80" src="/images/ambab.jpg">
+
+**Design Intern at [Ambab Infotech](https://www.ambab.com/) | Mumbai, India | May 2017**
+
+* Built a novel dashboard to visualize trends and forecast values of key performance indices for Tech Support Team of North America to monitor the health of the business and customer satisfaction daily
+* Implemented multilincgual text mining techniques fo
+
+<img align="right" width="150" height="80" src="/images/laughguru.png">
+
+**Sales Assistant at [Laugh Guru](https://www.laughguru.com/#/) | Mumbai, India | May 2016**
+
+* Built a novel dashboard to visualize trends and forecast values of key performance indices for Tech Support Team of North America to monitor the health of the business and customer satisfaction daily
+* Implemented multilincgual text mining techniques f
+
 
 
 
