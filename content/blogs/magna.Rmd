@@ -11,7 +11,7 @@ draft: no
 ---
 #### 
 
-Born and brought up in Mumbai, India, I completed my schooling from Bombay Scottish Scho get exposed to different sectors, I interned at varied positions in indsutries ranging from FinTech, Education, Financial Services and Technology. Sharing my learnings and work in this sections
+To get exposed to different sectors, I interned at varied positions in indsutries ranging from FinTech, Education, Financial Services and Technology. Sharing my learnings and work in this sections
 
 <img align="right" top="1200" width="200" height="150" topmargin="5000" src="/images/dell.png">
 
@@ -53,17 +53,17 @@ Born and brought up in Mumbai, India, I completed my schooling from Bombay Scott
 
 <img align="right" width="150" height="80" src="/images/ambab.jpg">
 
-**Design Intern at [Ambab Infotech](https://www.ambab.com/) | Mumbai, India | May 2017**
+**Web Design Intern at [Ambab Infotech](https://www.ambab.com/) | Mumbai, India | May 2017**
 
-* Built a novel dashboard to visualize trends and forecast values of key performance indices for Tech Support Team of North America to monitor the health of the business and customer satisfaction daily
-* Implemented multilincgual text mining techniques fo
+* Designed wireframes of websites using graphic design tools and developed their web versions using programming languages like HTML and CSS
+* This experience helped me to dive deeper into graphic designing and eventually lead the Graphics Team of my college
 
 <img align="right" width="150" height="80" src="/images/laughguru.png">
 
-**Sales Assistant at [Laugh Guru](https://www.laughguru.com/#/) | Mumbai, India | May 2016**
+**Marketing Associate at [Laugh Guru](https://www.laughguru.com/#/) | Mumbai, India | May 2016**
 
-* Built a novel dashboard to visualize trends and forecast values of key performance indices for Tech Support Team of North America to monitor the health of the business and customer satisfaction daily
-* Implemented multilincgual text mining techniques f
+* Showcased our online learning platform to parents, demonstrate key features and facilitate sales
+* Facilitated the growth of a company that aims at teaching the complex concepts to students aged between 5-12 years, using innovative stories, cartoons and animations
 
 
 
