@@ -7,6 +7,8 @@ math: false
 draft: false
 ---
 
+# Hello
+
 <img align="right" top="1200" width="200" height="150" topmargin="5000" src="dell.png">
 
 **Business Analyst at [Dell Technologies](https://www.delltechnologies.com/en-gb/index.htm) | June 2020 - July 2021**
@@ -61,7 +63,9 @@ hello4
 [Dell Technologies](https://www.delltechnologies.com/en-gb/index.htm) is a theme for [Hugo](https://gohugo.io). It is a port of [onevcat](https://onevcat.com)'s [Vno Jekyll](https://github.com/onevcat/vno-jekyll), which is originally developed from [Dale Anthony's Uno](https://github.com/daleanthony/uno).
 
 #### Usage
+
 Inside the folder of your Hugo site run:
+
 ```bash
 $ git submodule add https://github.com/xslingcn/vno-hugo.git themes/vno-hugo
 ```
