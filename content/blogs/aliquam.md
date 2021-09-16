@@ -1,8 +1,5 @@
 ---
-title: "Hello World rd"
-tags:
-- Say Hi
-- Vno
+title: "WORK EXPERIENCE"
 date: '2021-07-19T07:28:27+08:00'
 layout: post
 math: no
