@@ -2,14 +2,14 @@
 title: "WORK EXPERIENCE"
 date: '2021-07-19T07:28:27+08:00'
 layout: post
-output: HTML_document
+output: html_document
 draft: no
 math: no
 ---
 
 # Hello
 
-<img align="right" top="1200" width="200" height="150" topmargin="5000" src="dell.png">
+<img align="right" top="1200" width="200" height="150" topmargin="5000" src="/images/dell.png">
 
 **Business Analyst at [Dell Technologies](https://www.delltechnologies.com/en-gb/index.htm) | June 2020 - July 2021**
 
@@ -27,9 +27,9 @@ math: no
 
 
 
- <!--p align="center">  2 </p-->
+<!--p align="center">  2 </p-->
  
-<img align="right" width="150" height="100" src="EY.png">
+<img align="right" width="150" height="100" src="/images/EY.png">
 
 **Summer Intern at [Ernst & Young](https://www.ey.com/en_in) | May 2019 - June 2019**
 
