@@ -1,18 +1,17 @@
 ---
 title: "Work Experience"
-date: '2021-07-18T07:28:27+08:00'
-layout: post
 tags:
-- WorkExperience
+- Work Experience
 - Career
-output: html_document
-slug : magna
-draft: no
+date: '2021-07-19T07:28:27+08:00'
+slug: magna
+layout: post
 math: no
+draft: no
 ---
+#### 
 
-
-To get exposed to different sectors, I interned at varied positions in indsutries ranging from FinTech, Education, Financial Services and Technology. Sharing my learnings and work in this sections
+Born and brought up in Mumbai, India, I completed my schooling from Bombay Scottish Scho get exposed to different sectors, I interned at varied positions in indsutries ranging from FinTech, Education, Financial Services and Technology. Sharing my learnings and work in this sections
 
 <img align="right" top="1200" width="200" height="150" topmargin="5000" src="/images/dell.png">
 
