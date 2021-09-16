@@ -3,13 +3,9 @@ title: "WORK EXPERIENCE"
 date: '2021-07-19T07:28:27+08:00'
 layout: post
 output: html_document
-draft: false    
-math: false
 ---
 
-#WORK 
-
-
+# WORK 
 
 <img align="right" top="1200" width="200" height="150" topmargin="5000" src="/images/dell.png">
 
