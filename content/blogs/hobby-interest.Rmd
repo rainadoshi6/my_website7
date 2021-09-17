@@ -3,7 +3,7 @@ title: "Hobbies & Interests"
 tags:
 - Hobbies
 - Interests
-slug: aliquam
+slug: hobby-interest
 layout: post
 math: no
 draft: no
@@ -66,8 +66,8 @@ Sharing a few designs and photographs that highlight my love for the mountains, 
 
 **Graphic Designing**
 
-<img align="left" width="530" height="300" src="/images/wallpaper5.jpg">
-<img align="right" width="310" height="300" src="/images/design.png">
+<img align="right" width="530" height="300" src="/images/wallpaper5.jpg">
+<img align="left" width="310" height="300" src="/images/design.png">
 
 <p> </p>
 
