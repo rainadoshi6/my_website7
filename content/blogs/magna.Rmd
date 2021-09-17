@@ -4,7 +4,7 @@ tags:
 - Work Experience
 - Career
 - Roles
-date: '2021-09-15T07:8:27+08:00'
+date: "2021-09-15T07:8:27+08:00"
 slug: magna
 layout: post
 math: no
