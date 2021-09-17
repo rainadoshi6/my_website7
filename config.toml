@@ -4,7 +4,7 @@ baseURL = "https://rainadoshi.netlify.app/"
 theme = "Vno Hugo"
 
 # Pagination
-paginate = 15
+paginate = 10
 paginatePath = "page"
 
 [outputs]
