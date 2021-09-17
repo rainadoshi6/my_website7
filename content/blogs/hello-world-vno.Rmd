@@ -2,12 +2,17 @@
 title: "Introduction"
 tags:
 - Raina Doshi
-- Introduction
-date: '2021-09-21T07:28:27+08:00'
-slug: hello-world-vno
+- Education
+slug: blog3
 layout: post
 math: no
 draft: no
+date: "9/9/2021"
+output:
+  html_document:
+    theme: flatly
+    highlight: zenburn
+    toc: yes
 ---
 #### 
 
