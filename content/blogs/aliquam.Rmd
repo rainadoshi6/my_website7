@@ -16,8 +16,7 @@ output:
 ---
 #### 
 
-Sharing a few designs, photographs that highlight my love for the mountains and digital content!
-        
+Sharing a few designs and photographs that highlight my love for the mountains, cycling and adventure!     
 
 
 **Trekking**
@@ -60,6 +59,15 @@ Sharing a few designs, photographs that highlight my love for the mountains and 
 
 <img align="left" width="530" height="400" src="/images/cycling.jpg">
 <img align="right" width="310" height="400" src="/images/cycling2.jpg">
+
+<p> </p>
+
+****
+
+**Graphic Designing**
+
+<img align="left" width="530" height="300" src="/images/wallpaper5.jpg">
+<img align="right" width="310" height="300" src="/images/design.png">
 
 <p> </p>
 
