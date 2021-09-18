@@ -3,6 +3,8 @@ title: "Analytics and R"
 tags:
 - Markdown
 - Plots
+- R
+- Analytics
 slug: analytics
 layout: post
 math: no
@@ -18,42 +20,109 @@ output:
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<div id="r-markdown" class="section level1">
-<h1>R Markdown</h1>
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>You can embed an R code chunk like this:</p>
-<pre class="r"><code>summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932</code></pre>
-</div>
-<div id="including-plots" class="section level1">
-<h1>Including Plots</h1>
-<p>You can also embed plots. See Figure <a href="#fig:pie">1</a> for example:</p>
-<pre class="r"><code>par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&#39;Sky&#39;, &#39;Sunny side of pyramid&#39;, &#39;Shady side of pyramid&#39;),
-  col = c(&#39;#0292D8&#39;, &#39;#F7EA39&#39;, &#39;#C4B632&#39;),
-  init.angle = -50, border = NA
-)</code></pre>
-<div class="figure"><span style="display:block;" id="fig:pie"></span>
-<img src="/blogs/analytics_files/figure-html/pie-1.png" alt="A fancy pie chart." width="672" />
-<p class="caption">
-Figure 1: A fancy pie chart.
-</p>
+<div id="task-2-gapminder-country-comparison" class="section level1">
+<h1>Task 2: <code>gapminder</code> country comparison</h1>
+<p>You have seen the <code>gapminder</code> dataset that has data on life expectancy, population, and GDP per capita for 142 countries from 1952 to 2007. To get a glimpse of the dataframe, namely to see the variable names, variable types, etc., we use the <code>glimpse</code> function. We also want to have a look at the first 20 rows of data.</p>
+<pre class="r"><code>
+library(tidyverse)
+## -- Attaching packages --------------------------------------- tidyverse 1.3.1 --
+## v ggplot2 3.3.5     v purrr   0.3.4
+## v tibble  3.1.4     v dplyr   1.0.7
+## v tidyr   1.1.3     v stringr 1.4.0
+## v readr   2.0.1     v forcats 0.5.1
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+library(gapminder)
+
+glimpse(gapminder)
+## Rows: 1,704
+## Columns: 6
+## $ country   &lt;fct&gt; &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, ~
+## $ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, ~
+## $ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, ~
+## $ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.854, 40.8~
+## $ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 14880372, 12~
+## $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.1134, ~
+
+head(gapminder, 20) # look at the first 20 rows of the dataframe
+## # A tibble: 20 x 6
+##    country     continent  year lifeExp      pop gdpPercap
+##    &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+##  1 Afghanistan Asia       1952    28.8  8425333      779.
+##  2 Afghanistan Asia       1957    30.3  9240934      821.
+##  3 Afghanistan Asia       1962    32.0 10267083      853.
+##  4 Afghanistan Asia       1967    34.0 11537966      836.
+##  5 Afghanistan Asia       1972    36.1 13079460      740.
+##  6 Afghanistan Asia       1977    38.4 14880372      786.
+##  7 Afghanistan Asia       1982    39.9 12881816      978.
+##  8 Afghanistan Asia       1987    40.8 13867957      852.
+##  9 Afghanistan Asia       1992    41.7 16317921      649.
+## 10 Afghanistan Asia       1997    41.8 22227415      635.
+## 11 Afghanistan Asia       2002    42.1 25268405      727.
+## 12 Afghanistan Asia       2007    43.8 31889923      975.
+## 13 Albania     Europe     1952    55.2  1282697     1601.
+## 14 Albania     Europe     1957    59.3  1476505     1942.
+## 15 Albania     Europe     1962    64.8  1728137     2313.
+## 16 Albania     Europe     1967    66.2  1984060     2760.
+## 17 Albania     Europe     1972    67.7  2263554     3313.
+## 18 Albania     Europe     1977    68.9  2509048     3533.
+## 19 Albania     Europe     1982    70.4  2780097     3631.
+## 20 Albania     Europe     1987    72    3075321     3739.</code></pre>
+<p>Your task is to produce two graphs of how life expectancy has changed over the years for the <code>country</code> and the <code>continent</code> you come from.</p>
+<p>I have created the <code>country_data</code> and <code>continent_data</code> with the code below.</p>
+<pre class="r"><code>country_data &lt;- gapminder %&gt;% 
+            filter(country == &quot;India&quot;) # just choosing Greece, as this is where I come from
+
+continent_data &lt;- gapminder %&gt;% 
+            filter(continent == &quot;Asia&quot;)</code></pre>
+<p>First, create a plot of life expectancy over time for the single country you chose. Map <code>year</code> on the x-axis, and <code>lifeExp</code> on the y-axis. You should also use <code>geom_point()</code> to see the actual data points and <code>geom_smooth(se = FALSE)</code> to plot the underlying trendlines. You need to remove the comments <strong>#</strong> from the lines below for your code to run.</p>
+<pre class="r"><code>plot1 &lt;- ggplot(data = country_data, mapping = aes(x = year, y = lifeExp))+
+geom_point() +  geom_smooth(se = FALSE)+   NULL 
+
+plot1
+## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="/blogs/analytics_files/figure-html/lifeExp_one_country-1.png" width="672" /></p>
+<p>Next we need to add a title. Create a new plot, or extend plot1, using the <code>labs()</code> function to add an informative title to the plot.</p>
+<pre class="r"><code>plot1&lt;- plot1 + labs(title = &quot;Country Life Expectancy&quot;, x = &quot;Years&quot;,y = &quot;Expectancy&quot;) +   NULL
+
+
+plot1
+## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="/blogs/analytics_files/figure-html/lifeExp_one_country_with_label-1.png" width="672" /></p>
+<p>Secondly, produce a plot for all countries in the <em>continent</em> you come from. (Hint: map the <code>country</code> variable to the colour aesthetic. You also want to map <code>country</code> to the <code>group</code> aesthetic, so all points for each country are grouped together).</p>
+<pre class="r"><code>
+ggplot(data = continent_data, mapping = aes(x = year , y = lifeExp  , colour = country, group = country))+
+  geom_point() + 
+  geom_smooth(se = FALSE) +
+  NULL
+## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="/blogs/analytics_files/figure-html/lifeExp_one_continent-1.png" width="672" /></p>
+<p>Finally, using the original <code>gapminder</code> data, produce a life expectancy over time graph, grouped (or faceted) by continent. We will remove all legends, adding the <code>theme(legend.position="none")</code> in the end of our ggplot.</p>
+<pre class="r"><code>ggplot(data = gapminder , mapping = aes(x = year , y = lifeExp , colour= continent))+
+  geom_point() + 
+  geom_smooth(se = FALSE) +
+  facet_wrap(~continent) +
+  theme(legend.position=&quot;none&quot;) + #remove all legends
+  NULL
+## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="/blogs/analytics_files/figure-html/lifeExp_facet_by_continent-1.png" width="672" /></p>
+<blockquote>
+<p>Type your answer after this blockquote.</p>
+</blockquote>
+<div id="analysis-" class="section level2">
+<h2>Analysis-</h2>
+<p>As shown in the graph, the life expectancy all over the world and specifically in India has increased during the time period between 1952 - 2007.</p>
+<p>This positive change could be attributed to improved healthcare, changes in socio-economic lifestyle, increased awareness about hygiene and decline in the spread of communicable diseases.</p>
+<p>The next graph indicates the life expectancy in the 48 Asian countries. The graph shows that the trends in life expectancy in most of the countries is upward sloping. The life expectancy for Japan is almost 85 (2007) while Afghanistan has a life expectancy as low as 45 (2007).</p>
+<p>Japan’s exceptional longevity can be mainly because of the good diet, regular exercise and healthy attitude to life, community and family - which is the general culture in Japan. With less than 15% of deliveries are attended by trained health workers, mostly traditional birth attendants, Afghanistan has the second highest maternal mortality rate in the world. Lack of basic health care and malnutrition contribute to the high death rates and low life expectancy as seen from the graph.</p>
+<p>One of the outliers in the plot seems to be Cambodia that has a low life expectancy in 1977. The reason for this could be the Cambodian genocide, that resulted in the deaths of 1.5 to 2 million people from 1975 to 1979, nearly a quarter of Cambodia’s 1975 population.</p>
+<p>The graph showing the life expectancy across continents has an upward sloping trend for all. This can be attributed to better health care and immunization, socio-economic changes and improved education and awareness among the people.</p>
+<p>The main differences between the plots of the continents based on life expectancy is-</p>
+<ol style="list-style-type: decimal">
+<li>Slopes of the lines in the continents - The difference in steepness attributes to the nature of the country i.e developing vs developed country. The faster pace of development in Americas while the slower growth in Asia and Europe.</li>
+<li>Outliers - Outliers have affected the shape of the trend line for the continent they are a part of.</li>
+<li>Number of data points - The high number of points in Asia and Americas are due to the higher population in these continents as compared to Oceania and Europe.</li>
+</ol>
 </div>
 </div>

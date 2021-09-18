@@ -21,28 +21,94 @@ knitr::opts_chunk$set(collapse = TRUE)
 ```
 
 
-# R Markdown
+# Task 2: `gapminder` country comparison
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+You have seen the `gapminder` dataset that has data on life expectancy, population, and GDP per capita for 142 countries from 1952 to 2007. To get a glimpse of the dataframe, namely to see the variable names, variable types, etc., we use the `glimpse` function. We also want to have a look at the first 20 rows of data.
 
-You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
-fit <- lm(dist ~ speed, data = cars)
-fit
+
+```{r}
+
+library(tidyverse)
+library(gapminder)
+
+glimpse(gapminder)
+
+head(gapminder, 20) # look at the first 20 rows of the dataframe
+
 ```
 
-# Including Plots
+Your task is to produce two graphs of how life expectancy has changed over the years for the `country` and the `continent` you come from.
 
-You can also embed plots. See Figure \@ref(fig:pie) for example:
+I have created the `country_data` and `continent_data` with the code below.
 
-```{r pie, fig.cap='A fancy pie chart.', tidy=FALSE}
-par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c('Sky', 'Sunny side of pyramid', 'Shady side of pyramid'),
-  col = c('#0292D8', '#F7EA39', '#C4B632'),
-  init.angle = -50, border = NA
-)
+```{r}
+country_data <- gapminder %>% 
+            filter(country == "India") # just choosing Greece, as this is where I come from
+
+continent_data <- gapminder %>% 
+            filter(continent == "Asia")
 ```
+
+First, create a plot of life expectancy over time for the single country you chose. Map `year` on the x-axis, and `lifeExp` on the y-axis. You should also use `geom_point()` to see the actual data points and `geom_smooth(se = FALSE)` to plot the underlying trendlines. You need to remove the comments **\#** from the lines below for your code to run.
+
+```{r, lifeExp_one_country}
+plot1 <- ggplot(data = country_data, mapping = aes(x = year, y = lifeExp))+
+geom_point() +  geom_smooth(se = FALSE)+   NULL 
+
+plot1
+```
+
+Next we need to add a title. Create a new plot, or extend plot1, using the `labs()` function to add an informative title to the plot.
+
+```{r, lifeExp_one_country_with_label}
+plot1<- plot1 + labs(title = "Country Life Expectancy", x = "Years",y = "Expectancy") +   NULL
+
+
+plot1
+```
+
+Secondly, produce a plot for all countries in the *continent* you come from. (Hint: map the `country` variable to the colour aesthetic. You also want to map `country` to the `group` aesthetic, so all points for each country are grouped together).
+
+```{r lifeExp_one_continent}
+
+ggplot(data = continent_data, mapping = aes(x = year , y = lifeExp  , colour = country, group = country))+
+  geom_point() + 
+  geom_smooth(se = FALSE) +
+  NULL
+
+```
+
+Finally, using the original `gapminder` data, produce a life expectancy over time graph, grouped (or faceted) by continent. We will remove all legends, adding the `theme(legend.position="none")` in the end of our ggplot.
+
+```{r lifeExp_facet_by_continent}
+ggplot(data = gapminder , mapping = aes(x = year , y = lifeExp , colour= continent))+
+  geom_point() + 
+  geom_smooth(se = FALSE) +
+  facet_wrap(~continent) +
+  theme(legend.position="none") + #remove all legends
+  NULL
+```
+
+> Type your answer after this blockquote.
+
+
+## Analysis- 
+
+As shown in the graph, the life expectancy all over the world and specifically in India has increased during the time period between 1952 - 2007.  
+
+This positive change could be attributed to improved healthcare, changes in socio-economic lifestyle, increased awareness about hygiene and decline in the spread of communicable diseases. 
+
+The next graph indicates the life expectancy in the 48 Asian countries. The graph shows that the trends in life expectancy in most of the countries is upward sloping. The life expectancy for Japan is almost 85 (2007) while Afghanistan has a life expectancy as low as 45 (2007). 
+
+Japan's  exceptional longevity can be mainly because of the good diet, regular exercise and healthy attitude to life, community and family - which is the general culture in Japan. With less than 15% of deliveries are attended by trained health workers, mostly traditional birth attendants, Afghanistan has the second highest maternal mortality rate in the world. Lack of basic health care and malnutrition contribute to the high death rates and low life expectancy as seen from the graph.
+
+One of the outliers in the plot seems to be Cambodia that has a low life expectancy in 1977. The reason for this could be the Cambodian genocide, that resulted in the deaths of 1.5 to 2 million people from 1975 to 1979, nearly a quarter of Cambodia's 1975 population.
+
+The graph showing the life expectancy across continents has an upward sloping trend for all. This can be attributed to better health care and immunization, socio-economic changes and improved education and awareness among the people. 
+
+The main differences between the plots of the continents based on life expectancy is-
+
+1. Slopes of the lines in the continents - The difference in steepness attributes to the nature of the country i.e developing vs developed country. The faster pace of development in Americas while the slower growth in Asia and Europe. 
+2. Outliers - Outliers have affected the shape of the trend line for the continent they are a part of. 
+3. Number of data points - The high number of points in Asia and Americas are due to the higher population in these continents as compared to Oceania and Europe. 
