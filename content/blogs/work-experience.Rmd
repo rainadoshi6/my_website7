@@ -18,15 +18,17 @@ output:
 ---
 #### 
 
-To get exposed to different sectors, I interned at varied positions in indsutries ranging from FinTech, Education, Financial Services and Technology. Sharing my learnings and work in this sections
+To get exposed to different sectors, I interned at varied positions in indsutries ranging from Technology, Education, Financial Services, FinTech. and Education Sharing my learnings and contribution in these experiences
+
+
 
 <img align="right" top="1200" width="150" height="100" topmargin="5000" src="/images/dell.png">
 
 **Business Analyst at [Dell Technologies](https://www.delltechnologies.com/en-gb/index.htm) | Bangalore, India | June 2020 - July 2021**
 
-* Built a novel dashboard to visualize trends and forecast values of key performance indices for Tech Support Team of North America to monitor the health of the business and customer satisfaction daily
-* Implemented multilingual text mining techniques for categorizing ‘Digital City’ opportunities, thereby boosting sales by at least 5% in each quarter globally
- 
+* Worked with the Tech Support Team of North America to build a dashboard to visualize trends and forecast values of key performance indices 
+*	Implemented multilingual text mining techniques for categorizing ‘Digital City’ opportunities, thereby boosting sales by at least 5% in each quarter globally
+
  <!--p align="center">  1 </p-->
  
 <!--img align="left" width="150" height="100" src="dell2.png"-->
@@ -35,9 +37,9 @@ To get exposed to different sectors, I interned at varied positions in indsutrie
 
 **Winter Intern at [Dell Technologies](https://www.delltechnologies.com/en-gb/index.htm) | Bangalore, India | January 2020 - May 2020**
 
-* Built a novel dashboard to visualize trends and forecast values of key performance indices for Tech Support Team of North America to monitor the health of the business and customer satisfaction daily
-* Implemented multilincgual text mining techniques fo 
-
+* Joined as a part of the Data Science Team at Dell Global Analytics
+* Collaborated with cross functional teams to design a prototype dashboard to track the health of the business
+ 
 
 
 <!--p align="center">  2 </p-->
@@ -46,16 +48,18 @@ To get exposed to different sectors, I interned at varied positions in indsutrie
 
 **Summer Intern at [Ernst & Young](https://www.ey.com/en_in) | Mumbai, India | May 2019 - June 2019**
 
-* Built a novel dashboard to visualize trends and forecast values of key performance indices for Tech Support Team of North America to monitor the health of the business and customer satisfaction daily
-* Implemented multilincgual text mining techniques fo 
+*	Compiled risk management quantitative models to estimate default probabilities of borrowers saving the manual effort by 20 hours per week
+*	Formulated detailed reports on steps to be taken by Indian banks to comply with BASEL III norms
+
 
 
 <img align="right" width="150" height="80" src="/images/intellect.png">
 
 **Intern at [Intellect Design Arena](https://www.intellectdesign.com/about-us) | Mumbai, India | December 2018**
 
-* Built a novel dashboard to visualize trends and forecast values of key performance indices for Tech Support Team of North America to monitor the health of the business and customer satisfaction daily
-* Implemented multilincgual text mining techniques fo 
+*	Surveyed mutual funds' performance to gauge appetite for risk and ability to outperform peers by consolidating unstructured data over past 10 years from multiple sources
+*	Streamlined portfolio management routines by customizing it to clients’ quarterly reporting requirements using Microsoft Excel and Ladderup Knowledge Tool
+*	Devised methods for performance evaluation of top 5 large equity funds versus the top 10 holdings over a 5-year period
 
 
 <img align="right" width="150" height="80" src="/images/ambab.jpg">
@@ -69,9 +73,33 @@ To get exposed to different sectors, I interned at varied positions in indsutrie
 
 **Marketing Associate at [Laugh Guru](https://www.laughguru.com/#/) | Mumbai, India | May 2016**
 
-* Showcased our online learning platform to parents, demonstrate key features and facilitate sales
+* Showcased our online learning platform to parents, demonstrate key features and boosted sales by marketing campaigns
 * Facilitated the growth of a company that aims at teaching the complex concepts to students aged between 5-12 years, using innovative stories, cartoons and animations
 
 
+# Volunteering and Entreprenuership
 
+
+<img align="right" width="170" height="100" src="/images/bschool.png">
+
+**Founder at [B-Schools for Change](https://campsite.bio/bschoolsforchange) | Mumbai, India | April 2021**
+
+* Co-founded B-Schools for Change for mentoring graduate students for competitive examinations, interviews and college applications and donating funds to COVID relief organizations
+
+
+
+<img align="right" width="170" height="100" src="/images/onem.png">
+
+**Mentor at [OneManipal](https://www.linkedin.com/company/onemanipal/) | Mumbai, India | April  2021**
+
+* Fostered the OneManipal initiative as a student mentor helping juniors grow professionally and sharing experiences of job applications, interview preparation and elective selection
+
+
+
+<img align="right" width="180" height="60" src="/images/shelterDB.png">
+
+**Teaching Assistant at [Shelter Don Bosco](http://www.shelterdonbosco.org/) | Mumbai, India | May 2017**
+
+* Helped underprivileged children with school homework and build foundations for math and science through practical demonstrations
+* Taught students from Class 1 to 8 English, Mathematics, Computers and Science 
 
