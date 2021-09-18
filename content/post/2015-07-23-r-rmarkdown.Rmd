@@ -7,7 +7,7 @@ slug: 2015-07-23-r-rmarkdown
 layout: post
 math: no
 draft: no
-date: "9/9/2021"
+date: 2021-09-15
 output:
   html_document:
     theme: flatly
