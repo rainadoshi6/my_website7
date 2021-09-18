@@ -197,21 +197,6 @@ formula_ci <- comparison %>% filter(interval =="2011-present") %>%
             delta_low = annual_average_delta - margin_of_error,
             delta_high = annual_average_delta + margin_of_error)
 
-  # choose the interval 2011-present
-  # what dplyr verb will you use? 
-
-  # calculate summary statistics for temperature deviation (delta) 
-  # calculate mean, SD, count, SE, lower/upper 95% CI
-  # what dplyr verb will you use? 
-
-  # summarise(ann_aver_delta = mean(delta,na.rm=T),
-  #           sd_delta = sd(delta,na.rm=T),
-  #           count=n(),
-  #           t_critical = qt(0.975,count-1),
-  #           margin_of_error = t_critical*sd_delta/sqrt(count),
-  #           delta_low = ann_aver_delta-margin_of_error,
-  #           delta_high = ann_aver_delta+margin_of_error)
-#print out formula_CI
 formula_ci
 ```
 
