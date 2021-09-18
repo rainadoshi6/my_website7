@@ -1,0 +1,184 @@
+---
+---
+title: "Analytics | Animal Rescues"
+tags:
+- R Markdown
+- Plots
+- Analytics
+slug: analytics-2
+layout: post
+math: no
+draft: no
+date: 2021-09-16
+output:
+  html_document:
+    theme: flatly
+    highlight: zenburn
+    toc: yes
+    toc_float: yes
+---
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Animal rescue incidents attended by the London Fire Brigade
+
+[The London Fire Brigade](https://data.london.gov.uk/dataset/animal-rescue-incidents-attended-by-lfb) attends a range of non-fire incidents (which we call 'special services'). These 'special services' include assistance to animals that may be trapped or in distress. The data is provided from January 2009 and is updated monthly. A range of information is supplied for each incident including some location information (postcode, borough, ward), as well as the data/time of the incidents. We do not routinely record data about animal deaths or injuries.
+
+Please note that any cost included is a notional cost calculated based on the length of time rounded up to the nearest hour spent by Pump, Aerial and FRU appliances at the incident and charged at the current Brigade hourly rate.
+
+```{r load_animal_rescue_data, warning=FALSE, message=FALSE}
+
+library(tidyverse)
+
+
+url <- "https://data.london.gov.uk/download/animal-rescue-incidents-attended-by-lfb/8a7d91c2-9aec-4bde-937a-3998f4717cd8/Animal%20Rescue%20incidents%20attended%20by%20LFB%20from%20Jan%202009.csv"
+
+animal_rescue <- read_csv(url,
+                          locale = locale(encoding = "CP1252")) %>% 
+  janitor::clean_names()
+
+
+glimpse(animal_rescue)
+```
+One of the more useful things one can do with any data set is quick counts, namely to see how many observations fall within one category. For instance, if we wanted to count the number of incidents by year, we would either use `group_by()... summarise()` or, simply [`count()`](https://dplyr.tidyverse.org/reference/count.html)
+
+```{r, instances_by_calendar_year}
+
+animal_rescue %>% 
+  dplyr::group_by(cal_year) %>% 
+  summarise(count=n())
+
+animal_rescue %>% 
+  count(cal_year, name="count")
+
+```
+
+I try to see how many incidents we have by animal group. 
+
+```{r, animal_group_percentages}
+animal_rescue %>% 
+  group_by(animal_group_parent) %>% 
+  
+  #group_by and summarise will produce a new column with the count in each animal group
+  summarise(count = n()) %>% 
+  
+  # mutate adds a new column; here we calculate the percentage
+  mutate(percent = round(100*count/sum(count),2)) %>% 
+  
+  # arrange() sorts the data by percent. Since the default sorting is min to max and we would like to see it sorted
+  # in descending order (max to min), we use arrange(desc()) 
+  arrange(desc(percent))
+
+
+animal_rescue %>% 
+  
+  #count does the same thing as group_by and summarise
+  # name = "count" will call the column with the counts "count" ( exciting, I know)
+  # and 'sort=TRUE' will sort them from max to min
+  count(animal_group_parent, name="count", sort=TRUE) %>% 
+  mutate(percent = round(100*count/sum(count),2))
+
+
+```
+
+Let us have a look at the notional cost for rescuing each of these animals. As the LFB says,
+
+> Please note that any cost included is a notional cost calculated based on the length of time rounded up to the nearest hour spent by Pump, Aerial and FRU appliances at the incident and charged at the current Brigade hourly rate.
+
+There is two things I will do:
+
+1. Calculate the mean and median `incident_notional_cost` for each `animal_group_parent`
+2. Plot a boxplot to get a feel for the distribution of `incident_notional_cost` by `animal_group_parent`.
+
+
+Before I go on, however, I need to fix `incident_notional_cost` as it is stored as a `chr`, or character, rather than a number.
+
+```{r, parse_incident_cost,message=FALSE, warning=FALSE}
+
+# what type is variable incident_notional_cost from dataframe `animal_rescue`
+typeof(animal_rescue$incident_notional_cost)
+
+# readr::parse_number() will convert any numerical values stored as characters into numbers
+animal_rescue <- animal_rescue %>% 
+
+  # we use mutate() to use the parse_number() function and overwrite the same variable
+  mutate(incident_notional_cost = parse_number(incident_notional_cost))
+
+# incident_notional_cost from dataframe `animal_rescue` is now 'double' or numeric
+typeof(animal_rescue$incident_notional_cost)
+
+```
+
+Now that incident_notional_cost is numeric, let me quickly calculate summary statistics for each animal group. 
+
+
+```{r, stats_on_incident_cost,message=FALSE, warning=FALSE}
+
+animal_rescue %>% 
+  
+  # group by animal_group_parent
+  group_by(animal_group_parent) %>% 
+  
+  # filter resulting data, so each group has at least 6 observations
+  filter(n()>6) %>% 
+  
+  # summarise() will collapse all values into 3 values: the mean, median, and count  
+  # we use na.rm=TRUE to make sure we remove any NAs, or cases where we do not have the incident cost
+  summarise(mean_incident_cost = mean (incident_notional_cost, na.rm=TRUE),
+            median_incident_cost = median(incident_notional_cost, na.rm=TRUE),
+            sd_incident_cost = sd (incident_notional_cost, na.rm=TRUE),
+            min_incident_cost = min (incident_notional_cost, na.rm=TRUE),
+            max_incident_cost = max (incident_notional_cost, na.rm=TRUE),
+            count = n()) %>% 
+  
+  # sort the resulting data in descending order. You choose whether to sort by count or mean cost.
+   arrange(desc(mean_incident_cost))
+
+```
+
+
+
+Finally, I will plot a few plots that show the distribution of incident_cost for each animal group.
+
+```{r, plots_on_incident_cost_by_animal_group,message=FALSE, warning=FALSE}
+
+# base_plot
+base_plot <- animal_rescue %>% 
+  group_by(animal_group_parent) %>% 
+  filter(n()>6) %>% 
+  ggplot(aes(x=incident_notional_cost))+
+  facet_wrap(~animal_group_parent, scales = "free")+
+  theme_bw()
+
+base_plot + geom_histogram()
+base_plot + geom_density()
+base_plot + geom_boxplot()
+base_plot + stat_ecdf(geom = "step", pad = FALSE) +
+  scale_y_continuous(labels = scales::percent)
+
+
+
+```
+
+> Conclusion
+
+### Analysis- 
+ For checking the variability, the **box plot** conveys maximum information and clarity on the range of the data (minimum and maximum) and the outliers and show overall patterns of response for a group. Boxplots are a standardized way of displaying the distribution of data based on a five number summary (“minimum”, first quartile (Q1), median, third quartile (Q3), and “maximum”. They provide a useful way to visualize the range and other characteristics of responses for a large group.
+ 
+From the boxplots, we can see that the dogs, cats and deer have similar incidental costs. The high number of outliers may be because they are often involved in accidents at home or on the road and while some pet owners can afford expert professional care, the others cannot and hence, there is a range of costs varies. 
+
+Birds have a relatively short spread of cost value compared to the other pets, possibly due to defined treatment, fixed diets and lower likelihood of accidents. However, their outlying values are high perhaps due to severity of the wounds since they are fragile and have difficult recovery methods. 
+
+Rabbits, Squirrels, Hamsters and Ferrets have approximately similar spread of values and average rescue cost. This could be to due to the similar size of the rodents and probably similar type of issues.
+
+Cows have an average cost of approximately 500, and have no outliers in the data. This could be possibly because the owners of the cows may be using the cow as a source of valuable income for supplying diary products and hence may be giving their cows timely immunizations, nutritious food and a healthy environment to live. 
+
+Wild animals may need special care and treatment provided in rare, niche clinics causing the outliers to be spread even beyond 2000 in some cases due to the severity of the problems that the rescue teams have to deal with. 
+
+
+
+
+

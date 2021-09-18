@@ -1,9 +1,8 @@
 ---
-title: "Analytics and R"
+title: "Analytics | Gapminder Dataset"
 tags:
-- Markdown
+- R Markdown
 - Plots
-- R
 - Analytics
 slug: analytics
 layout: post
