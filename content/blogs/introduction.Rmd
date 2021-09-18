@@ -2,8 +2,8 @@
 title: "Introduction"
 tags:
 - Raina Doshi
-- Education
-slug: hello-world-vno
+- Introduction
+slug: introduction
 layout: post
 math: no
 draft: no
