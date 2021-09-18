@@ -4,7 +4,7 @@ tags:
 - Work Experience
 - Career
 - Roles
-slug: magna
+slug: work-experience
 layout: post
 math: no
 draft: no
