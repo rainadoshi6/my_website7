@@ -16,7 +16,7 @@ output:
 ---
 #### 
 
-Academics and extracirriculars pursued while in school..
+Academics and extracurricular activities pursued while in school..
 
 <!--img align="left" width="100" height="100" src="/images/wallpaper1.jpg"-->
 
