@@ -8,7 +8,7 @@ slug: work-experience
 layout: post
 math: no
 draft: no
-date: 2021-09-16
+date: 2021-09-17
 output:
   html_document:
     theme: flatly
