@@ -34,7 +34,7 @@ library(gapminder)
 
 glimpse(gapminder)
 
-head(gapminder, 20) # look at the first 20 rows of the dataframe
+head(gapminder, 5) # look at the first 5 rows of the dataframe
 
 ```
 

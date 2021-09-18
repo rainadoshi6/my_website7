@@ -52,14 +52,22 @@ To get exposed to different sectors, I interned at varied positions in indsutrie
 *	Formulated detailed reports on steps to be taken by Indian banks to comply with BASEL III norms
 
 
+<img align="right" width="150" height="80" src="/images/ladderup.png">
 
-<img align="right" width="150" height="80" src="/images/intellect.png">
-
-**Intern at [Intellect Design Arena](https://www.intellectdesign.com/about-us) | Mumbai, India | December 2018**
+**Intern at [Ladderup Wealth Management](https://www.ladderup.com/team-wealth-management.htm) | Mumbai, India | June - July 2018**
 
 *	Surveyed mutual funds' performance to gauge appetite for risk and ability to outperform peers by consolidating unstructured data over past 10 years from multiple sources
 *	Streamlined portfolio management routines by customizing it to clients’ quarterly reporting requirements using Microsoft Excel and Ladderup Knowledge Tool
 *	Devised methods for performance evaluation of top 5 large equity funds versus the top 10 holdings over a 5-year period
+
+
+
+<img align="right" width="150" height="80" src="/images/intellect.png">
+
+**Software Developer Intern at [Intellect Design Arena](https://www.intellectdesign.com/about-us) | Mumbai, India | December 2018**
+
+*	Programmed a search engine using Java, to conduct quick retrieval of documents in sub millisecond speeds from thousands of documents in the backend
+* Linked the backend search engine to a graphical user interface to view the matching results seamlessly
 
 
 <img align="right" width="150" height="80" src="/images/ambab.jpg">
