@@ -8,7 +8,7 @@ slug: analytics-2
 layout: post
 math: no
 draft: no
-date: 2021-09-16
+date: 2021-09-15
 output:
   html_document:
     theme: flatly
@@ -24,9 +24,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Animal rescue incidents attended by the London Fire Brigade
 
-[The London Fire Brigade](https://data.london.gov.uk/dataset/animal-rescue-incidents-attended-by-lfb) attends a range of non-fire incidents (which we call 'special services'). These 'special services' include assistance to animals that may be trapped or in distress. The data is provided from January 2009 and is updated monthly. A range of information is supplied for each incident including some location information (postcode, borough, ward), as well as the data/time of the incidents. We do not routinely record data about animal deaths or injuries.
-
-Please note that any cost included is a notional cost calculated based on the length of time rounded up to the nearest hour spent by Pump, Aerial and FRU appliances at the incident and charged at the current Brigade hourly rate.
+[The London Fire Brigade](https://data.london.gov.uk/dataset/animal-rescue-incidents-attended-by-lfb) attends a range of non-fire incidents. These 'special services' include assistance to animals that may be trapped or in distress. The data is provided from January 2009 and is updated monthly. A range of information is supplied for each incident including some location information (postcode, borough, ward), as well as the data/time of the incidents. 
 
 ```{r load_animal_rescue_data, warning=FALSE, message=FALSE}
 
@@ -40,7 +38,7 @@ animal_rescue <- read_csv(url,
   janitor::clean_names()
 
 
-glimpse(animal_rescue)
+#glimpse(animal_rescue)
 ```
 One of the more useful things one can do with any data set is quick counts, namely to see how many observations fall within one category. For instance, if we wanted to count the number of incidents by year, we would either use `group_by()... summarise()` or, simply [`count()`](https://dplyr.tidyverse.org/reference/count.html)
 
@@ -82,10 +80,6 @@ animal_rescue %>%
 
 
 ```
-
-Let us have a look at the notional cost for rescuing each of these animals. As the LFB says,
-
-> Please note that any cost included is a notional cost calculated based on the length of time rounded up to the nearest hour spent by Pump, Aerial and FRU appliances at the incident and charged at the current Brigade hourly rate.
 
 There is two things I will do:
 
@@ -138,8 +132,7 @@ animal_rescue %>%
 
 ```
 
-
-
+  
 Finally, I will plot a few plots that show the distribution of incident_cost for each animal group.
 
 ```{r, plots_on_incident_cost_by_animal_group,message=FALSE, warning=FALSE}
