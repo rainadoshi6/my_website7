@@ -1,5 +1,5 @@
 ---
-title: "Analytics | Climate Change and Temperature Anomalies"
+title: "Analytics | Climate Data"
 tags:
 - R Markdown
 - Plots
@@ -20,7 +20,7 @@ knitr::opts_chunk$set(collapse = TRUE)
 ```
 
 
-# Climate change and temperature anomalies 
+## Climate Change Analysis 
 
 We want to analyse the climate change in the period between 1951-1980
 

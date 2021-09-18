@@ -1,5 +1,5 @@
 ---
-title: "Analytics | Climate Change and Temperature Anomalies"
+title: "Analytics | Climate Data"
 tags:
 - R Markdown
 - Plots
@@ -19,8 +19,8 @@ output:
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<div id="climate-change-and-temperature-anomalies" class="section level1">
-<h1>Climate change and temperature anomalies</h1>
+<div id="climate-change-analysis" class="section level2">
+<h2>Climate Change Analysis</h2>
 <p>We want to analyse the climate change in the period between 1951-1980</p>
 <p>First, we load the data from <em>Combined Land-Surface Air and Sea-Surface Water Temperature Anomalies</em> in the Northern Hemisphere at <a href="https://data.giss.nasa.gov/gistemp">NASA’s Goddard Institute for Space Studies</a>. The <a href="https://data.giss.nasa.gov/gistemp/tabledata_v4/NH.Ts+dSST.txt">tabular data of temperature anomalies can be found here</a></p>
 <pre class="r"><code>
@@ -54,6 +54,7 @@ tidyweather
 ## 10  1880 Oct   -0.31
 ## # ... with 1,694 more rows</code></pre>
 <p>Now we inspect the dataframe, it has three columns indicating the Year, Month and the delta value of climate change which shows how much the temperature varys from the base year.</p>
+</div>
 <div id="plotting-information" class="section level2">
 <h2>Plotting Information</h2>
 <p>We plot the data using a time-series scatter plot, and have added a trendline. We first created a new variable called <code>date</code> in order to ensure that the <code>delta</code> values are plot chronologically.</p>
@@ -209,5 +210,4 @@ boot_delta
 <li>Using both the bootstrap method and the formula method we got a 95% confidence interval for delta as (1.01,1.11).</li>
 <li>This means that we are 95% confident that the true mean for 2011-present for delta lies within the range of (1.01,1.11). We can confirm that there is a net increase in temperature since the base year.</li>
 </ul>
-</div>
 </div>
