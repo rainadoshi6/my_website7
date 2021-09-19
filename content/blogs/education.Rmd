@@ -30,7 +30,7 @@ Academics and extracurricular activities pursued while in school..
 * Winner of the Inter-House Dance 'Nritya' Competition in 2013
 * Awarded the *Laxman Popley Silver Medal* for securing the second position in my school
 
-<img align="right" top="1200" width="100" height="66" topmargin="5000" src="/images/pace.jpg">
+<img align="right" top="1200" width="130" height="75" topmargin="5000" src="/images/pace.jpg">
 
 **[Pace Junior Science College](http://www.pacejuniorsciencecollege.com/) | 91.07%** 
 
@@ -38,7 +38,7 @@ Academics and extracurricular activities pursued while in school..
 * Secured a place in the top 5 percentile of my college with distinction in mathematics and statistics
 
 
-<img align="right" top="1200" width="130" height="60" topmargin="5000" src="/images/MU.png">
+<img align="right" top="1200" width="150" height="70" topmargin="5000" src="/images/MU.png">
 
 **[Manipal Institute of Technology](https://manipal.edu/mit.html) | 9.52/10**
 
@@ -48,3 +48,33 @@ Academics and extracurricular activities pursued while in school..
 * Category Head for Graphics - TechTatva (2018)
 * Category Head for Social Media - Revels (2019)
 * Head of Graphics for The Photogaphy Club of Manipal (2018-2019)
+
+
+<img align="right" top="1200" width="180" height="90" topmargin="5000" src="/images/coursera.png">
+
+
+**[Massive Open Online Courses](https://www.classcentral.com/help/moocs)**
+
+
+
+* [Effective Problem-Solving and Decision-Making](https://www.coursera.org/account/accomplishments/records/U8B5YW4PVYPE) 
+University of California, Irvine
+* [Introduction to Personal Branding](https://www.coursera.org/account/accomplishments/records/APDNPDVYXTKD)
+University of Virginia
+* [Foundations of marketing analytics](https://www.coursera.org/account/accomplishments/records/AMJYVB3PZ4HH)
+ESSEC Business School
+* [Understanding Financial Statements: Company Performance](https://www.coursera.org/account/accomplishments/records/E7LF669GUQ62)
+University of Illinois at Urbana-Champaign
+* [Finance for Non-Financial Professionals](https://www.coursera.org/account/accomplishments/records/Q3Z93RQTEW8B)
+University of California, Irvine
+* [Initiating and Planning Projects](https://www.coursera.org/account/accomplishments/records/E4DJWACLZMEG)
+University of California, Irvine
+* [Essentials of Entrepreneurship: Thinking & Action](https://www.coursera.org/account/accomplishments/records/HM36NEVDUPGZ)
+University of California, Irvine
+* [Data Science Math Skills](https://www.coursera.org/account/accomplishments/records/BVTNKSKUHD6E)
+Duke University
+* [What is Data Science?](https://www.coursera.org/account/accomplishments/records/7W7FSFK6DDPG)
+IBM
+* [High-Impact Business Writing](https://www.coursera.org/account/accomplishments/records/QMPQT7Q8XGW2)
+University of California, Irvine
+
